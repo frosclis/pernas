@@ -61,9 +61,9 @@
 						
 					?>
 					<tr>
-						<td>#</td>
+						<td><a href="page-edit.php?page=<?php echo $id; ?>"><?php echo $id; ?></a></td>
 						<td>
-							<a><?php echo $titulo; ?></a>
+							<a href="page-edit.php?page=<?php echo $id; ?>"><?php echo $titulo; ?></a>
 							<br />
 							<small>Última Edición: <?php echo $ultima_edicion; ?></small>
 						</td>
@@ -78,7 +78,7 @@
 							<?php echo $badge; ?>
 						</td>
 						<td>
-							<a href="/<?php echo $url; ?>" target="_blank" class="btn btn-primary btn-xs"><i class="fa fa-folder"></i> Ver </a>
+							<a href="/contenido/<?php echo $url; ?>" target="_blank" class="btn btn-primary btn-xs"><i class="fa fa-folder"></i> Ver </a>
 							<a href="page-edit.php?page=<?php echo $id; ?>" class="btn btn-info btn-xs"><i class="fa fa-pencil"></i> Editar </a>
 							<button onclick="borradoPagina(<?php echo $id;?>);" class="btn btn-danger btn-xs"><i class="fa fa-trash-o"></i> Borrar </button>
 						</td>

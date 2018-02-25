@@ -5,6 +5,7 @@
      RewriteBase / 
      RewriteCond %{SCRIPT_FILENAME} !-d
      RewriteCond %{SCRIPT_FILENAME} !-f
+     RewriteRule ^contenido/(.*)$ page.php?url=$1 [L]
      RewriteRule ^proximamente maintenance.php
 
 </IfModule>

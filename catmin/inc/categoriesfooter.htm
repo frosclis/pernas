@@ -1,0 +1,67 @@
+<!-- footer content -->
+        <footer>
+            <div class="pull-right">
+                Alba Pernas Fotografía - Catmin
+            </div>
+          <div class="clearfix"></div>
+        </footer>
+        <!-- /footer content -->
+      </div>
+    </div>
+
+    <!-- jQuery -->
+    <script src="vendors/jquery/dist/jquery.min.js"></script>
+    <!-- Bootstrap -->
+    <script src="vendors/bootstrap/dist/js/bootstrap.min.js"></script>
+    <!-- FastClick -->
+    <script src="vendors/fastclick/lib/fastclick.js"></script>
+    <!-- NProgress -->
+    <script src="vendors/nprogress/nprogress.js"></script>
+    <!-- bootstrap-progressbar -->
+    <script src="vendors/bootstrap-progressbar/bootstrap-progressbar.min.js"></script>
+	
+	<script src="vendors/datatables.net/js/jquery.dataTables.min.js"></script>
+    
+    <!-- Custom Theme Scripts -->
+    <script src="build/js/custom.min.js"></script>
+	
+	<script type="text/javascript">
+	
+	function borradoCategoria(id){
+		var id = id;
+		$.ajax({
+		  method: "POST",
+		  url: "<?=delcategoryfile?>",
+		  data: { category_id: id }
+		}).done(function( msg ) {
+			if(msg !== ""){
+				alert(msg);
+			}else{
+				window.location = "/catmin/categories.php";
+			}
+		});
+	}
+	
+	$(function() {
+		$("#nuevaCategoria").click(function(){
+			if($("#categoria_nombre").val() != ""){				
+				$.ajax({
+				  method: "POST",
+				  url: "<?=newcategoryfile?>",
+				  data: { categoria_nombre: $("#categoria_nombre").val() }
+				}).done(function( msg ) {
+					if($.isNumeric(msg)){
+						window.location = "<?=categoryeditfile?>?category=" + msg;
+					}else{
+						alert(msg);
+					}
+				});
+			} else {
+				alert("El campo de título no debería estar vacío.");
+			}
+		});
+	});
+	
+</script>
+  </body>
+</html>
