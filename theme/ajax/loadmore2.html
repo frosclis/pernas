@@ -1,0 +1,34 @@
+<div class="cbp-loadMore-block1">
+  <?php
+	$index = new Index();
+	$galeriasMoisaic = $index->getGaleriasMore();
+	$contador = 14;
+	foreach($galeriasMoisaic as $galerieMosaic){
+		$url = $galerieMosaic['friendly_url'];
+		$titulo = $galerieMosaic['titulo'];
+		$imagenMosaic = "/uploads/galleries/560/".$galerieMosaic['principal'];
+		$categoria_id = $galerieMosaic['categoria'];
+		$categorieName = $index->GetCategorieName($categoria_id);
+		$categorieFilter = $categorieName[0]['nombre'];
+
+		?>
+			<div id="item-mosaic-<?php echo $contador; ?>" class="cbp-item <?php echo $categorieFilter; ?>">
+				<a class="cbp-caption" href="/galerias/<?php echo $url;?>">
+					<div class="cbp-caption-defaultWrap"> <img src="<?php echo $imagenMosaic; ?>" alt="<?php echo $titulo; ?>" /> </div>
+					<div class="cbp-caption-activeWrap">
+						<div class="cbp-l-caption-alignCenter">
+							<div class="cbp-l-caption-body">
+								<div class="cbp-l-caption-title"><span><?php echo $titulo; ?></span></div>
+							</div>
+						</div>
+					</div>
+					<!--/.cbp-caption-activeWrap -->
+				</a>
+			</div>
+			  <!--/.cbp-item -->
+		<?php
+		$contador++;
+	}
+  ?>
+
+</div>

@@ -1,0 +1,73 @@
+<!-- footer content -->
+        <footer>
+          <div class="pull-right">
+            Gentelella - Bootstrap Admin Template by <a href="https://colorlib.com">Colorlib</a>
+          </div>
+          <div class="clearfix"></div>
+        </footer>
+        <!-- /footer content -->
+      </div>
+    </div>
+	
+	<link href="vendors/switchery/dist/switchery.min.css" rel="stylesheet">
+    <!-- jQuery -->
+    <script src="vendors/jquery/dist/jquery.min.js"></script>
+	<script src="vendors/switchery/dist/switchery.min.js"></script>
+    <!-- Bootstrap -->
+    <script src="vendors/bootstrap/dist/js/bootstrap.min.js"></script>
+
+    <!-- Custom Theme Scripts -->
+    <script src="build/js/custom.min.js"></script>
+	<script type="text/javascript">
+		
+		$(function() {
+			$("#options-update").click(function(){
+				if($("#nombre_web").val() != "" && $("#description").val() != "" && $("#email").val() != ""){
+					if($('#mantenimiento')[0].checked == true){
+						var publicado = 1;
+					} else {
+						var publicado = 0;
+					}
+					$.ajax({
+						  method: "POST",
+						  url: "<?=updateoptionsfile?>",
+						  data: { nombre_web: $("#nombre_web").val(), description: $("#description").val(), email: $("#email").val(), facebook: $("#facebook").val(), twitter: $("#twitter").val(), instagram: $("#instagram").val(), flickr: $("#flickr").val(), pinterest: $("#pinterest").val(), linkedin: $("#linkedin").val(), telefono: $("#telefono").val(), direccion: $("#direccion").val(), longitud: $("#longitud").val(), latitud: $("#latitud").val(), mantenimiento: publicado }
+						}).done(function( msg ) {
+							if(msg !== ""){
+								alert(msg);
+							}else{
+								window.location = "<?=optionsfile?>?updated=1";
+							}
+						});					
+				} else {
+					alert("Los campos nombre, descripción e e-mail son obligatorios.");
+				}
+			});
+		});
+		
+		$(function() {
+			$("#update-logo").click(function(){
+				var file_data = $('#file').prop('files')[0];   
+				var form_data = new FormData();                  
+				form_data.append('file', file_data);                            
+				$.ajax({
+							url: '<?=updatelogofile?>', // point to server-side PHP script 
+							dataType: 'text',  // what to expect back from the PHP script, if anything
+							cache: false,
+							contentType: false,
+							processData: false,
+							data: form_data,                         
+							type: 'post'
+				 }).done(function( msg ) {
+					if(msg !== ""){
+						alert(msg);
+					}else{
+						window.location = "<?=optionsfile?>?updatedavatar=1";
+					}
+				});	
+			});
+		});
+	</script>
+	
+  </body>
+</html>

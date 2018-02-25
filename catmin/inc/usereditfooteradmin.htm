@@ -1,0 +1,92 @@
+<!-- footer content -->
+        <footer>
+          <div class="pull-right">
+            Gentelella - Bootstrap Admin Template by <a href="https://colorlib.com">Colorlib</a>
+          </div>
+          <div class="clearfix"></div>
+        </footer>
+        <!-- /footer content -->
+      </div>
+    </div>
+
+    <!-- jQuery -->
+    <script src="vendors/jquery/dist/jquery.min.js"></script>
+    <!-- Bootstrap -->
+    <script src="vendors/bootstrap/dist/js/bootstrap.min.js"></script>
+
+    <!-- Custom Theme Scripts -->
+    <script src="build/js/custom.min.js"></script>
+	<script type="text/javascript">
+		$(function() {
+			$("#pass-change").click(function(){
+				if($("#password").val() != "" && $("#password1").val() != ""){
+					if($("#password").val() == $("#password1").val()){
+						$.ajax({
+						  method: "POST",
+						  url: "<?=changepassword?>",
+						  data: { id: $("#userid").val(), password: $("#password").val() }
+						}).done(function( msg ) {
+							if(msg !== ""){
+								alert(msg);
+							}else{
+								window.location = "/catmin/users.php?changed=1";
+							}
+						});
+					} else {
+						alert("Los campos de contraseñas deben ser iguales.");
+					}
+					
+				} else {
+					alert("Los campos de contraseñas no pueden estar vacíos.");
+				}
+			});
+		});
+		
+		
+		$(function() {
+			$("#profile-update").click(function(){
+				if($("#nombre").val() != "" && $("#apellido").val() != "" && $("#email").val() != ""){
+					$.ajax({
+						  method: "POST",
+						  url: "<?=updateprofilefile?>",
+						  data: { id: $("#userid").val(), nombre: $("#nombre").val(), apellido: $("#apellido").val(), email: $("#email").val() }
+						}).done(function( msg ) {
+							if(msg !== ""){
+								alert(msg);
+							}else{
+								window.location = "/catmin/users.php?updated=1";
+							}
+						});					
+				} else {
+					alert("Los campos del perfil no pueden estar vacíos.");
+				}
+			});
+		});
+		
+		$(function() {
+			$("#update-avatar").click(function(){
+				var file_data = $('#file').prop('files')[0];   
+				var form_data = new FormData();                  
+				form_data.append('file', file_data); 
+				form_data.append('id', $("#userid").val());
+				$.ajax({
+							url: '<?=updateavatarfileadmin?>', // point to server-side PHP script 
+							dataType: 'text',  // what to expect back from the PHP script, if anything
+							cache: false,
+							contentType: false,
+							processData: false,
+							data: form_data,
+							type: 'post'
+				 }).done(function( msg ) {
+					if(msg !== ""){
+						alert(msg);
+					}else{
+						window.location = "/catmin/users.php?updatedavatar=1";
+					}
+				});	
+			});
+		});
+	</script>
+	
+  </body>
+</html>
