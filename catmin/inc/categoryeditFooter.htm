@@ -1,0 +1,105 @@
+<!-- footer content -->
+        <footer>
+          <div class="pull-right">
+            Gentelella - Bootstrap Admin Template by <a href="https://colorlib.com">Colorlib</a>
+          </div>
+          <div class="clearfix"></div>
+        </footer>
+        <!-- /footer content -->
+      </div>
+    </div>
+
+    <!-- jQuery -->
+    <script src="vendors/jquery/dist/jquery.min.js"></script>
+    <!-- Bootstrap -->
+    <script src="vendors/bootstrap/dist/js/bootstrap.min.js"></script>
+    <!-- FastClick -->
+    <script src="vendors/fastclick/lib/fastclick.js"></script>
+    <!-- NProgress -->
+    <script src="vendors/nprogress/nprogress.js"></script>
+    <!-- bootstrap-progressbar -->
+    <script src="vendors/bootstrap-progressbar/bootstrap-progressbar.min.js"></script>
+	
+	<script src="vendors/datatables.net/js/jquery.dataTables.min.js"></script>
+	<script src="vendors/moment/min/moment.min.js"></script>
+	<script src="vendors/switchery/dist/switchery.min.js"></script>
+	<script src="vendors/jquery.hotkeys/jquery.hotkeys.js"></script>
+    <script src="vendors/google-code-prettify/src/prettify.js"></script>
+	<script src="vendors/jquery.tagsinput/src/jquery.tagsinput.js"></script>
+    
+    <!-- Custom Theme Scripts -->
+    <script src="build/js/custom.min.js"></script>
+	
+	<script type="text/javascript" src="js/dropzone.js"></script>
+	
+	
+	<script type="text/javascript">
+		$(function() {
+			$("#updatecategory").click(function(){
+				if($("#category_nombre").val() != "" && $("#friendly_url").val() != ""){
+					if($('#estado')[0].checked == true){
+						var publicado = 1;
+					} else {
+						var publicado = 0;
+					}
+					
+					$.ajax({
+					  method: "POST",
+					  url: "<?=updatecategory?>",
+					  data: { categoria_id: $("#categoria_id").val(), categoria_nombre: $("#categoria_nombre").val(), categoria_padre: $("#categoria_padre").val(), friendly_url: $("#friendly_url").val(), categoria_description: $("#categoria_description").val(), keywords: $("#tags_1").val(), estado: publicado }
+					}).done(function( msg ) {
+						if(msg !== ""){
+							alert(msg);
+						}else{
+							window.location = '<?=categoryeditfile?>?category='+$("#categoria_id").val()+'&updated=1';
+						}
+					});
+				} else {
+					alert("Debes rellenar los campos obligatorios.");
+				}
+			});
+		});	
+		
+
+		Dropzone.autoDiscover = false;
+		$('.dropzone').dropzone ({
+				url: "<?=uploadimagescategoryfile?>",
+				init: function() {
+					thisDropzone = this;
+					$.ajax({
+					  method: "POST",
+					  url: "<?=uploadimagescategoryfile?>",
+					  data: { categoryID: $("#categoria_id").val() },
+					  dataType: "json"
+					}).done(function(data) {
+						
+						$.each(data, function(key,value){
+							 
+							var mockFile = { name: "../uploads/categories/"+value.file_name, size: value.id };
+							
+							thisDropzone.emit("addedfile", mockFile);
+							
+							thisDropzone.createThumbnailFromUrl(mockFile, "../uploads/categories/"+value.file_name);
+
+							thisDropzone.emit("complete", mockFile);
+	 	
+						});
+						
+					});
+					
+					this.on("sending", function(file, xhr, formData){
+						formData.append("categoryID", $("#categoria_id").val())
+					});
+					
+					this.on('removedfile', function(file){
+						$.ajax({
+						url: "<?=deleteimagescategoryfile?>",
+						type: "POST",
+						data: { 'imageID': file.size, 'ruta': file.name}
+						});
+					});
+				},
+		});
+	</script>
+  </body>
+</html>

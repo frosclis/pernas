@@ -1,0 +1,67 @@
+<!-- footer content -->
+        <footer>
+          <div class="pull-right">
+            Gentelella - Bootstrap Admin Template by <a href="https://colorlib.com">Colorlib</a>
+          </div>
+          <div class="clearfix"></div>
+        </footer>
+        <!-- /footer content -->
+      </div>
+    </div>
+
+    <!-- jQuery -->
+    <script src="vendors/jquery/dist/jquery.min.js"></script>
+    <!-- Bootstrap -->
+    <script src="vendors/bootstrap/dist/js/bootstrap.min.js"></script>
+    <!-- FastClick -->
+    <script src="vendors/fastclick/lib/fastclick.js"></script>
+    <!-- NProgress -->
+    <script src="vendors/nprogress/nprogress.js"></script>
+    <!-- bootstrap-progressbar -->
+    <script src="vendors/bootstrap-progressbar/bootstrap-progressbar.min.js"></script>
+	
+	<script src="vendors/datatables.net/js/jquery.dataTables.min.js"></script>
+    
+    <!-- Custom Theme Scripts -->
+    <script src="build/js/custom.min.js"></script>
+	
+	<script type="text/javascript">
+	
+	function borradoPagina(id){
+		var id = id;
+		$.ajax({
+		  method: "POST",
+		  url: "<?=delpagefile?>",
+		  data: { pagina_id: id }
+		}).done(function( msg ) {
+			if(msg !== ""){
+				alert(msg);
+			}else{
+				window.location = "/catmin/pages.php";
+			}
+		});
+	}
+	
+	$(function() {
+		$("#nuevaPagina").click(function(){
+			if($("#titulo").val() != "" && $("#autor").val() != ""){				
+				$.ajax({
+				  method: "POST",
+				  url: "<?=newpagefile?>",
+				  data: { titulo: $("#titulo").val(), autor: $("#autor").val() }
+				}).done(function( msg ) {
+					if($.isNumeric(msg)){
+						window.location = "<?=pageeditfile?>?page=" + msg;
+					}else{
+						alert(msg);
+					}
+				});
+			} else {
+				alert("El campo de título no debería estar vacío.");
+			}
+		});
+	});
+	
+</script>
+  </body>
+</html>

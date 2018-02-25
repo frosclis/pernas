@@ -1,0 +1,100 @@
+<!-- footer content -->
+        <footer>
+          <div class="pull-right">
+            Gentelella - Bootstrap Admin Template by <a href="https://colorlib.com">Colorlib</a>
+          </div>
+          <div class="clearfix"></div>
+        </footer>
+        <!-- /footer content -->
+      </div>
+    </div>
+	<link href="css/nestable.css" type="text/css" rel="stylesheet" />
+	<!-- jQuery -->
+    <script src="vendors/jquery/dist/jquery.min.js"></script>
+    <!-- Bootstrap -->
+    <script src="vendors/bootstrap/dist/js/bootstrap.min.js"></script>
+
+    <!-- Custom Theme Scripts -->
+    <script src="build/js/custom.min.js"></script>
+	<script src="js/jquery.nestable.js"></script>
+	<script type="text/javascript">
+	
+	function addLink(link, nombre, ruta){
+	console.log(link);
+	console.log(nombre);
+	console.log(ruta);
+		if(ruta==0){
+			ruta = "/". link;
+		}
+		
+		if(ruta==1){
+			ruta =  "/galerias/categoria/" . link;
+		}
+		
+		if(ruta==2){
+			ruta = "/galeria/" . link;
+		}
+		
+		$.ajax({
+			method: "POST",
+			url: "<?=addmenulinkfile?>",
+			data: {
+				nombre: nombre, ruta: ruta
+			}
+		}).done(function( msg ) {
+			if(msg !== ""){
+				alert(msg);
+			}else{
+				window.location.reload(true);
+			}
+		});
+		
+	}
+		
+		
+		$(document).ready(function()
+		{
+		
+		var updateOutput = function(e)
+			{
+				var list   = e.length ? e : $(e.target),
+					output = list.data('output');
+									
+					$.ajax({
+						method: "POST",
+						url: "<?=updatemenufile?>",
+						data: {
+							menus: list.nestable('serialize')
+						}
+					}).fail(function(jqXHR, textStatus, errorThrown){
+						alert("Unable to save new list order: " + errorThrown);
+					});
+				
+			};
+
+			$('#nestable-menu').on('click', function(e)
+			{
+				var target = $(e.target),
+					action = target.data('action');
+				if (action === 'expand-all') {
+					$('.dd').nestable('expandAll');
+				}
+				if (action === 'collapse-all') {
+					$('.dd').nestable('collapseAll');
+				}
+			});
+			
+			
+				$('#nestable3').nestable({
+					group: 1
+				})
+				.on('change', updateOutput);
+				
+				
+
+
+		});
+	</script>
+	
+  </body>
+</html>
