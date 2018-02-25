@@ -47,7 +47,7 @@ class Page{
     }
 	
 	/**
-	* Obtener el listado de páginas
+	* Obtener el listado de pï¿½ginas
 	* @return void*/
 	
 	public function getPages($estado){
@@ -146,7 +146,7 @@ class Page{
 		$database->bind(':friendly_url', $friendly_url);
 		$database->bind(':meta_description', $meta_description);
 		$database->bind(':keywords', $keywords);
-		$database->bind(':subtitulo', $subtitulo);
+        $database->bind(':subtitulo', $subtitulo);
 		$database->bind(':estado', $estado);
 		$database->bind(':pagina_id', $pagina_id);
 		$database->bind(':contenido', $contenido);
@@ -156,7 +156,7 @@ class Page{
 		if($database->execute()){
 			return true;
 		} else {
-			$this->msg = 'Ha ocurrido un problema con tu actualización. Inténtalo más tarde.';
+			$this->msg = 'Ha ocurrido un problema con tu actualizaciï¿½n. Intï¿½ntalo mï¿½s tarde.';
 			return false;
 		}
     }
@@ -172,11 +172,11 @@ class Page{
 			if($database->execute()){
 				return true;
 			} else {
-				$this->msg = 'Ha ocurrido un error durante el borrado de la página. Inténtalo más tarde.';
+				$this->msg = 'Ha ocurrido un error durante el borrado de la pï¿½gina. Intï¿½ntalo mï¿½s tarde.';
 				return false;
 			}
 		} else {
-			$this->msg = 'Ha ocurrido un error durante el borrado de la página. Inténtalo más tarde.';
+			$this->msg = 'Ha ocurrido un error durante el borrado de la pï¿½gina. Intï¿½ntalo mï¿½s tarde.';
 			return false;
 		}
 	}
@@ -209,11 +209,11 @@ class Page{
 				$this->msg = $database->lastInsertId();
 				return true;
 			} else {
-				$this->msg = 'Ha ocurrido un error creando tu nueva página. Inténtalo más tarde.';
+				$this->msg = 'Ha ocurrido un error creando tu nueva pï¿½gina. Intï¿½ntalo mï¿½s tarde.';
 				return false;
 			}
 		}
-		$this->msg = 'Ha ocurrido un error creando tu nueva página. Inténtalo más tarde.';
+		$this->msg = 'Ha ocurrido un error creando tu nueva pï¿½gina. Intï¿½ntalo mï¿½s tarde.';
 		return false;
 	}
 	
@@ -230,11 +230,11 @@ class Page{
 			if($database->execute()){
 				return true;
 			} else {
-				$this->msg = 'Ha ocurrido un error registrando las imágenes. Inténtalo más tarde.';
+				$this->msg = 'Ha ocurrido un error registrando las imï¿½genes. Intï¿½ntalo mï¿½s tarde.';
 				return false;
 			}
 		} else {
-			$this->msg = 'Ha ocurrido un error registrando las imágenes. Inténtalo más tarde.';
+			$this->msg = 'Ha ocurrido un error registrando las imï¿½genes. Intï¿½ntalo mï¿½s tarde.';
 			return false;
 		}
 	}

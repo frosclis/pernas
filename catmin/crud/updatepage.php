@@ -11,7 +11,7 @@
 	$titulo = filter_input(INPUT_POST, 'titulo', FILTER_DEFAULT);
 	$meta_description = filter_input(INPUT_POST, 'meta_description', FILTER_DEFAULT);
 	$keywords = filter_input(INPUT_POST, 'keywords', FILTER_DEFAULT);
-	$subtitulo = filter_input(INPUT_POST, 'subtitulo', FILTER_SANITIZE_EMAIL);
+$subtitulo = filter_input(INPUT_POST, 'subtitulo', FILTER_DEFAULT);
     $contenido = filter_input(INPUT_POST, 'contenido', FILTER_DEFAULT);
 	$estado = filter_input(INPUT_POST, 'estado', FILTER_DEFAULT);
 	$principal = filter_input(INPUT_POST, 'principal', FILTER_DEFAULT);
