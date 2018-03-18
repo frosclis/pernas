@@ -33,6 +33,6 @@
 		$page->pageMiddle($opciones);
 		$comon->comonFooter($opciones);
 	}else{
-		header('Location: maintenance.php');
+		header('Location:/proximamente');
 	}
 ?>

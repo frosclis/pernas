@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="<?php echo $datos[0]['description']; ?>">
+    <meta name="keywords" content="<?php echo $datos[0]['keywords']; ?>">
     <meta name="author" content="">
     <link rel="shortcut icon" href="/theme/style/images/favicon.png">
     <title><?php echo $datos[0]['meta_title']; ?></title>
