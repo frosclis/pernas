@@ -174,6 +174,7 @@
 					$cat_id = $post['categoria'];
 					$catdata = $index->getCategorieBlogName($cat_id);
 					$categoria = $catdata[0]['nombre'];
+                    $color = $catdata[0]['color'];
 					$titulo = $post['titulo'];
 					$friendly_url = $post['friendly_url'];
 					$fecha_publicacion = $post['fecha_publicacion'];
@@ -183,7 +184,7 @@
 						<div class="item post">
 							<figure class="main"><img src="<?php echo $imagen; ?>" alt="<?php echo $titulo; ?>" /></figure>
 							<div class="box text-center">
-							  <div class="category cat<?php echo $cat_id; ?>"><span><a href="/blog/categoria/<?php echo $categoria; ?>"><?php echo $categoria; ?></a></span></div>
+							  <div class="category <?php echo $color; ?>"><span><a href="/categoria-blog/<?php echo $categoria; ?>"><?php echo $categoria; ?></a></span></div>
 							  <h4 class="post-title"><a href="/blog/<?php echo $friendly_url; ?>"><?php echo $titulo; ?></a></h4>
 							  <div class="meta"><span class="date"><?php echo $fecha_publicacion; ?></span><span class="comentarios"><a href="/blog/<?php echo $friendly_url; ?>"><i class="icon-chat-1"></i> 15</a></span></div>
 							  <p><?php echo $contenido; ?>...</p>
@@ -211,7 +212,7 @@
     <div class="container inner">
       <div class="row">
         <div class="col-sm-4 col-md-3">
-          <h2>Instagram Feed</h2>
+          <h2>Instagram</h2>
           <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Duis mollis, est non commodo luctus, nisi erat. Nullam quis risus eget urna mollis ornare vel eu leo. Duis mollis, est non commodo.</p>
           <div class="divide10"></div>
           <a href="https://instagram.com/urbanshots/" class="btn btn-icon"><i class="icon-s-instagram"></i> Instagram Page</a> </div>

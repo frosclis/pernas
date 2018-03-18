@@ -51,7 +51,7 @@ class BlogCategory{
     }
 	
 	/**
-	* Obtener el listado de páginas
+	* Obtener el listado de pï¿½ginas
 	* @return void*/
 	
 	public function getBlogCategories($estado){
@@ -97,11 +97,11 @@ class BlogCategory{
 			if($database->execute()){
 				return true;
 			} else {
-				$this->msg = 'Ha ocurrido un error durante el borrado de la categoría. Inténtalo más tarde.';
+				$this->msg = 'Ha ocurrido un error durante el borrado de la categorï¿½a. Intï¿½ntalo mï¿½s tarde.';
 				return false;
 			}
 		} else {
-			$this->msg = 'Ha ocurrido un error durante el borrado de la categoría. Inténtalo más tarde.';
+			$this->msg = 'Ha ocurrido un error durante el borrado de la categorï¿½a. Intï¿½ntalo mï¿½s tarde.';
 			return false;
 		}
 	}
@@ -155,7 +155,7 @@ class BlogCategory{
 		} 
     }
 	
-	public function updateBlogCategory($categoria_id, $categoria_nombre, $friendly_url, $categoria_description, $keywords, $estado){
+	public function updateBlogCategory($categoria_id, $categoria_nombre, $friendly_url, $categoria_description, $keywords, $estado, $color){
 		$database = new Database();
 		
 		$friendly_original = $friendly_url;
@@ -165,20 +165,20 @@ class BlogCategory{
 			$friendly_url = $friendly_original . "-" .$contador;
 			$contador++;
 		}
-		
 
-		$database->query('UPDATE categoriesblog SET friendly_url = :friendly_url, description = :categoria_description, keywords = :keywords, nombre = :categoria_nombre, estado = :estado, ultima_edicion = NOW() WHERE id = :categoria_id');
+        $database->query('UPDATE categoriesblog SET friendly_url = :friendly_url, description = :categoria_description, keywords = :keywords, nombre = :categoria_nombre, estado = :estado, color = :color, ultima_edicion = NOW() WHERE id = :categoria_id');
 		$database->bind(':friendly_url', $friendly_url);
 		$database->bind(':categoria_description', $categoria_description);
 		$database->bind(':keywords', $keywords);
 		$database->bind(':estado', $estado);
 		$database->bind(':categoria_id', $categoria_id);
 		$database->bind(':categoria_nombre', $categoria_nombre);
+        $database->bind(':color', $color);
 		
 		if($database->execute()){
 			return true;
 		} else {
-			$this->msg = 'Ha ocurrido un problema con tu actualización. Inténtalo más tarde.';
+			$this->msg = 'Ha ocurrido un problema con tu actualizaciï¿½n. Intï¿½ntalo mï¿½s tarde.';
 			return false;
 		}
     }
@@ -197,10 +197,11 @@ class BlogCategory{
 				$contador++; 
 			 }
 			
-			$database->query('INSERT INTO categoriesblog (id, nombre, friendly_url, estado, description, keywords, ultima_edicion) VALUES (:id, :categoria_nombre, :friendly_url, :estado, :meta_description, :keywords, NOW())');
+			$database->query('INSERT INTO categoriesblog (id, nombre, friendly_url, estado, color, description, keywords, ultima_edicion) VALUES (:id, :categoria_nombre, :friendly_url, :estado, :color, :meta_description, :keywords, NOW())');
 			$database->bind(':id', NULL);
 			$database->bind(':meta_description', "");
 			$database->bind(':keywords', "");
+            $database->bind(':color', "");
 			$database->bind(':categoria_nombre', $nombre);
 			$database->bind(':friendly_url', $friendly_url);
 			$database->bind(':estado', 0);
@@ -209,11 +210,11 @@ class BlogCategory{
 				$this->msg = $database->lastInsertId();
 				return true;
 			} else {
-				$this->msg = 'Ha ocurrido un error creando tu nueva página. Inténtalo más tarde.';
+				$this->msg = 'Ha ocurrido un error creando tu nueva pï¿½gina. Intï¿½ntalo mï¿½s tarde.';
 				return false;
 			}
 		}
-		$this->msg = 'Ha ocurrido un error creando tu nueva página. Inténtalo más tarde.';
+		$this->msg = 'Ha ocurrido un error creando tu nueva pï¿½gina. Intï¿½ntalo mï¿½s tarde.';
 		return false;
 	}
 	
@@ -230,11 +231,11 @@ class BlogCategory{
 			if($database->execute()){
 				return true;
 			} else {
-				$this->msg = 'Ha ocurrido un error registrando las imágenes. Inténtalo más tarde.';
+				$this->msg = 'Ha ocurrido un error registrando las imï¿½genes. Intï¿½ntalo mï¿½s tarde.';
 				return false;
 			}
 		} else {
-			$this->msg = 'Ha ocurrido un error registrando las imágenes. Inténtalo más tarde.';
+			$this->msg = 'Ha ocurrido un error registrando las imï¿½genes. Intï¿½ntalo mï¿½s tarde.';
 			return false;
 		}
 	}

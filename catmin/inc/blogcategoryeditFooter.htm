@@ -46,7 +46,7 @@
 					$.ajax({
 					  method: "POST",
 					  url: "<?=updateblogcategory?>",
-					  data: { categoria_id: $("#categoria_id").val(), categoria_nombre: $("#categoria_nombre").val(), friendly_url: $("#friendly_url").val(), categoria_description: $("#categoria_description").val(), keywords: $("#tags_1").val(), estado: publicado }
+					  data: { categoria_id: $("#categoria_id").val(), categoria_nombre: $("#categoria_nombre").val(), friendly_url: $("#friendly_url").val(), categoria_description: $("#categoria_description").val(), keywords: $("#tags_1").val(), estado: publicado, color: $("#color").val() }
 					}).done(function( msg ) {
 						if(msg !== ""){
 							alert(msg);

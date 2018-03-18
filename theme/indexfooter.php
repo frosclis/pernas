@@ -15,18 +15,18 @@
 						$friendly_url = $post['friendly_url'];
 						$fecha_publicacion = $post['fecha_publicacion'];
 						
-						?>
-						
-						<li>
-							<div class="icon-overlay"> <a href="/blog/<?php echo $friendly_url; ?>"><img src="<?php echo $imagen; ?>" alt="<?php echo $titulo; ?>" /> </a> </div>
-							<div class="meta">
-							  <h5><a href="/blog/<?php echo $friendly_url; ?>"><?php echo $titulo; ?></a></h5>
-							  <em><span class="date"><?php echo $fecha_publicacion; ?></span> <span class="comentarios"><a href="/blog/<?php echo $friendly_url; ?>"><i class="icon-chat-1"></i> 8</a></span></em> </div>
-						  </li>
-									
-						<?php
-						}
-					?>
+                    ?>
+
+                    <li>
+                        <div class="icon-overlay"> <a href="/blog/<?php echo $friendly_url; ?>"><img src="<?php echo $imagen; ?>" alt="<?php echo $titulo; ?>" /> </a> </div>
+                        <div class="meta">
+                          <h5><a href="/blog/<?php echo $friendly_url; ?>"><?php echo $titulo; ?></a></h5>
+                          <em><span class="date"><?php echo $fecha_publicacion; ?></span> <span class="comentarios"><a href="/blog/<?php echo $friendly_url; ?>"><i class="icon-chat-1"></i> 8</a></span></em> </div>
+                      </li>
+
+                    <?php
+                    }
+                ?>
             </ul>
             <!-- /.post-list --> 
           </div>
@@ -36,7 +36,7 @@
         
         <div class="col-sm-4">
           <div class="widget">
-            <h4 class="widget-title">Tags</h4>
+            <h4 class="widget-title">Etiquetas</h4>
             <ul class="tag-list">
               <li><a href="#" class="btn">Web</a></li>
               <li><a href="#" class="btn">Photography</a></li>
@@ -95,15 +95,15 @@
         
         <div class="col-sm-4">
           <div class="widget">
-            <h4 class="widget-title">Search</h4>
+            <h4 class="widget-title">Buscar</h4>
             <form class="searchform" method="get">
-              <input type="text" id="s2" name="s" value="Search something" onfocus="this.value=''" onblur="this.value='Search something'">
-              <button type="submit" class="btn btn-default">Find</button>
+              <input type="text" id="s2" name="s" value="Tu Búsqueda" onfocus="this.value=''" onblur="this.value='Search something'">
+              <button type="submit" class="btn btn-default">Buscar</button>
             </form>
           </div>
           <!-- /.widget -->
           <div class="widget">
-            <h4 class="widget-title">Get In Touch</h4>
+            <h4 class="widget-title">Contacto</h4>
             <p>Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa.</p>
             <div class="contact-info"> <i class="icon-location"></i> <?php echo $datos[0]['direccion']; ?> <br />
               <i class="icon-phone"></i><?php echo $datos[0]['telefono']; ?> <br />

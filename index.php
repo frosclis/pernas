@@ -14,6 +14,6 @@
 		$index->indexMiddle();
 		$index->indexFooter($opciones);
 	}else{
-		header('Location: maintenance.php');
+		header('Location: /proximamente');
 	}
 ?>

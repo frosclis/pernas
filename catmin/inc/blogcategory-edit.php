@@ -12,6 +12,7 @@
 		$categoria_nombre = $datos['nombre'];
 		$categoria_description = $datos['description'];
 		$keywords = $datos['keywords'];
+        $color = $datos['color'];
 		$ultima_edicion = $datos['ultima_edicion'];
 		$estado = $datos['estado'];
 		if($estado == 1){
@@ -67,6 +68,29 @@
 						  <input type="text" id="friendly_url" name="friendly_url" required="required" value="<?php echo $friendly_url; ?>" class="form-control col-md-7 col-xs-12">
 						</div>
 					  </div>
+                        <div class="form-group">
+                            <label for="color">Color de la etiqueta</label>
+                            <div>
+                                <select class="select2_single form-control" id="color" name="color" tabindex="-1">
+                                    <option value="none">-- Elige un color --</option>
+                                    <option value="cat1" <?php echo ($color == "cat1" ? 'selected' : ''); ?> style="background: rgba(120,176,208,0.9);">Cat1</option>
+                                    <option value="cat2" <?php echo ($color == "cat2" ? 'selected' : ''); ?> style="background: rgba(133,149,192,0.9);">Cat2</option>
+                                    <option value="cat3" <?php echo ($color == "cat3" ? 'selected' : ''); ?> style="background: rgba(195,143,168,0.9);">Cat3</option>
+                                    <option value="cat4" <?php echo ($color == "cat4" ? 'selected' : ''); ?> style="background: rgba(133,182,182,0.9);">Cat4</option>
+                                    <option value="cat5" <?php echo ($color == "cat5" ? 'selected' : ''); ?> style="background: rgba(134,195,140,0.9);">Cat5</option>
+                                    <option value="cat6" <?php echo ($color == "cat6" ? 'selected' : ''); ?> style="background: rgba(120,198,208,0.9)">Cat6</option>
+                                    <option value="cat7" <?php echo ($color == "cat7" ? 'selected' : ''); ?> style="background: rgba(180,207,121,0.9);">Cat7</option>
+                                    <option value="cat8" <?php echo ($color == "cat8" ? 'selected' : ''); ?> style="background: rgba(120,207,121,0.9);">Cat8</option>
+                                    <option value="cat9" <?php echo ($color == "cat9" ? 'selected' : ''); ?> style="background: rgba(207,121,145,0.9);">Cat9</option>
+                                    <option value="cat10" <?php echo ($color == "cat10" ? 'selected' : ''); ?> style="background: rgba(226,159,123,0.9);">Cat10</option>
+                                    <option value="cat11" <?php echo ($color == "cat11" ? 'selected' : ''); ?> style="background: rgba(163,181,227,0.9);">Cat11</option>
+                                    <option value="cat12" <?php echo ($color == "cat12" ? 'selected' : ''); ?> style="background: rgba(252,179,76,0.9);">Cat12</option>
+                                    <option value="cat13" <?php echo ($color == "cat13" ? 'selected' : ''); ?> style="background: rgba(228,222,43,0.9);">Cat13</option>
+                                    <option value="cat14" <?php echo ($color == "cat14" ? 'selected' : ''); ?> style="background: rgba(192,121,208,0.9);">Cat14</option>
+                                    <option value="cat15" <?php echo ($color == "cat15" ? 'selected' : ''); ?> style="background: rgba(84,109,133,0.9);">Cat15</option>
+                                </select>
+                            </div>
+                        </div>
 					  <div class="form-group">
 						<label  for="categoria_description">Meta-description 
 						</label>

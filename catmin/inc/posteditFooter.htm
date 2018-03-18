@@ -129,8 +129,10 @@
 		});
 		
 		$(function () {
-			$('#fecha_publicacion').datetimepicker();
-		});
+			$('#fecha_publicacion').datetimepicker({
+                format: ('YYYY-MM-DD hh:mm')
+            });
+        });
 		
 		window.addEventListener('load', function () {
 			portada = $("#portada").val();
