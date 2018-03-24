@@ -1,8 +1,8 @@
     <aside class="col-sm-4 sidebar">
         <div class="sidebox widget">
             <h3 class="widget-title">Buscar</h3>
-            <form class="searchform" method="get">
-                <input type="text" id="s1" name="s" value="Tu búsqueda" onfocus="this.value=''" onblur="this.value='Search something'">
+            <form class="searchform" method="post" action="/buscar">
+                <input type="text" id="busqueda" name="busqueda" value="" placeholder="Tu búsqueda">
                 <button type="submit" class="btn btn-default">Buscar</button>
             </form>
         </div>

@@ -49,6 +49,10 @@ class BlogFront{
         print $this->renderData(postMiddle, "", $data);
     }
 
+    public function searchMiddle($data) {
+        print $this->renderData(searchMiddle, "", $data);
+    }
+
 
     public function getPosts($pag, $categoria){
 
@@ -189,6 +193,23 @@ class BlogFront{
     function full_url( $s, $use_forwarded_host = false )
     {
         return $this->url_origin( $s, $use_forwarded_host ) . $s['REQUEST_URI'];
+    }
+
+
+    public function getPostsSearch($busqueda){
+
+        $database = new Database();
+
+
+        $database->query('SELECT "pagina" as tipo, friendly_url, titulo, contenido, principal as portada FROM pages WHERE titulo LIKE :busqueda OR contenido LIKE :busqueda AND estado = 1 UNION SELECT "post" as tipo, friendly_url, titulo, contenido, portada FROM posts WHERE titulo LIKE :busqueda OR contenido LIKE :busqueda AND estado = 1');
+
+        $database->bind(':busqueda', "%".$busqueda."%");
+        $code = $database->resultset();
+        if($database->rowCount() > 0){
+            return $code;
+        } else {
+            return $array = [false];
+        }
     }
 
 }

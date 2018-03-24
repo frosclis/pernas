@@ -13,6 +13,7 @@
      RewriteRule ^blog/(.*)$ blog.php?pag=$1
      RewriteRule ^post/(.*)$ post.php?url=$1 [L]
      RewriteRule ^contenido/(.*)$ page.php?url=$1 [L]
+     RewriteRule ^buscar search.php
      RewriteRule ^proximamente maintenance.php
      RewriteRule ^error error404.php
 
