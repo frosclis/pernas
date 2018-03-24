@@ -101,22 +101,6 @@
         <!-- /.widget -->
 
         <div class="sidebox widget">
-            <h3 class="widget-title">Etiquetas</h3>
-            <ul class="tag-list">
-                <li><a href="#" class="btn">Web</a></li>
-                <li><a href="#" class="btn">Photography</a></li>
-                <li><a href="#" class="btn">Illustation</a></li>
-                <li><a href="#" class="btn">Fun</a></li>
-                <li><a href="#" class="btn">Blog</a></li>
-                <li><a href="#" class="btn">Commercial</a></li>
-                <li><a href="#" class="btn">Journal</a></li>
-                <li><a href="#" class="btn">Nature</a></li>
-                <li><a href="#" class="btn">Still Life</a></li>
-            </ul>
-        </div>
-        <!-- /.widget -->
-
-        <div class="sidebox widget">
             <h3 class="widget-title">Instagram</h3>
             <div class="image-grid col3">
                 <div class="items-wrapper">

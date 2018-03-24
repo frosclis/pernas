@@ -1,4 +1,9 @@
 <div class="container inner2">
+    <?php
+        if(isset($datos[0]["categoria_titulo"])){
+            echo $datos[0]["categoria_titulo"];
+        }
+    ?>
     <div class="blog grid-view col2 row">
         <div class="col-sm-8 blog-content">
             <div class="blog-posts">
@@ -53,38 +58,7 @@
             <div class="pagination">
                 <ul>
                     <?php
-                        $pag = $datos[0]['pagina'];
-                        $anterior = $pag-1;
-                        $siguiente = $pag+1;
-
-                        $object = new BlogFront();
-                        $total_posts = $object->getMaxPags();
-                        $max_pages = ceil($total_posts[0]["total"]/6);
-
-
-                        if($anterior > 0) {
-                            if($anterior == 1){
-                                ?>
-                                    <li><a href="/blog">Anterior</a></li>
-                                    <li><a href="/blog"><span>1</span></a></li>
-                                <?php
-                            } else {
-                                ?>
-                                    <li><a href="/blog/<?php echo $anterior; ?>">Anterior</a></li>
-                                    <li><a href="/blog/<?php echo $anterior; ?>"><span><?php echo $anterior; ?></span></a></li>
-                                <?php
-                            }
-                        }
-
-                    ?>
-                    <li class="active"><a href="/blog/<?php echo $pag; ?>"><span><?php echo $pag; ?></span></a></li>
-                    <?php
-                        if($siguiente <= $max_pages) {
-                            ?>
-                                <li><a href="/blog/<?php echo $siguiente; ?>"><span><?php echo $siguiente; ?></span></a></li>
-                                <li><a href="/blog/<?php echo $siguiente; ?>">Siguiente</a></li>
-                            <?php
-                        }
+                        echo $datos[0]["paginacion"];
                     ?>
                 </ul>
             </div>

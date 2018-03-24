@@ -15,8 +15,8 @@
 
 	$datos = $page->getPageData($url);
 
-	if(!$datos) {
-        header('Location: 404.php');
+	if(empty($datos)) {
+        header('Location:../error');
     }
 
 	$menu_index = $datos[0]["titulo"];
