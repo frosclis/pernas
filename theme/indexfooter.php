@@ -96,8 +96,8 @@
         <div class="col-sm-4">
           <div class="widget">
             <h4 class="widget-title">Buscar</h4>
-            <form class="searchform" method="get">
-              <input type="text" id="s2" name="s" value="Tu Búsqueda" onfocus="this.value=''" onblur="this.value='Search something'">
+            <form class="searchform" method="post" action="/buscar">
+                <input type="text" id="busqueda" name="busqueda" value="" placeholder="Tu búsqueda">
               <button type="submit" class="btn btn-default">Buscar</button>
             </form>
           </div>
