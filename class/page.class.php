@@ -37,7 +37,12 @@ class Page{
     public function getPageData($url){
         $database = new Database();
 
-        $database->query('SELECT * FROM pages WHERE friendly_url = :url AND estado = 1 LIMIT 1');
+        if((isset($_SESSION['user']['id']) && $_SESSION['user']['id'] !== '')) {
+            $database->query('SELECT * FROM pages WHERE friendly_url = :url LIMIT 1');
+        } else {
+            $database->query('SELECT * FROM pages WHERE friendly_url = :url AND estado = 1 LIMIT 1');
+        }
+
         $database->bind(':url', $url);
         $code = $database->resultset();
         return $code;
