@@ -86,7 +86,7 @@
 </nav>
 <!-- /.navbar -->
 
-<div class="post-parallax parallax inverse-wrapper parallax1" style="background-image: url(/uploads/pages/<?php echo $datos[0]['principal']; ?>);">
+<div class="post-parallax parallax inverse-wrapper parallax1" style="background-image: url(<?php echo $datos[0]['principal']; ?>);">
     <div class="container inner text-center">
         <div class="headline text-center">
             <h2><?php echo $vars; ?></h2>

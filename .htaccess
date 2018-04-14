@@ -15,6 +15,9 @@
      RewriteRule ^contenido/(.*)$ page.php?url=$1 [L]
      RewriteRule ^buscar search.php
      RewriteRule ^proximamente maintenance.php
+     RewriteRule ^galerias galeries.php
+     RewriteRule ^categoria-galerias/(.*)$ gallery-category.php?url=$1 [L]
+     RewriteRule ^galeria/(.*)$ gallery.php?url=$1 [L]
      RewriteRule ^error error404.php
 
 </IfModule>
