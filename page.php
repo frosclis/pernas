@@ -23,7 +23,7 @@
 	$opciones[0]['description'] = $datos[0]["meta_description"];
     $opciones[0]['meta_title'] = $opciones[0]['nombre_web'] . " - " . $datos[0]["titulo"];
     $opciones[0]['subtitulo'] = $datos[0]["subtitulo"];
-    $opciones[0]['principal'] = $datos[0]["principal"];
+    $opciones[0]['principal'] = "/uploads/pages/1080/".$datos[0]["principal"];
     $opciones[0]['keywords'] = $datos[0]["keywords"];
     $opciones[0]['contenido'] = $datos[0]["contenido"];
 
