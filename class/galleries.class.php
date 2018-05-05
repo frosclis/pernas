@@ -113,7 +113,7 @@ class GalleriesFront{
 
         $resultado = $database->resultset();
 
-        echo json_encode($resultado);
+        return $resultado;
     }
 
     public function getCategoryImage($id){

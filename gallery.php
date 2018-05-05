@@ -31,6 +31,7 @@
         $opciones[0]["principal"] = "/uploads/galleries/1080/".$datos["principal"];
 
         $opciones = array_merge($opciones, $datos);
+        $opciones["imagenes"] = $galleries->getImagesGallery($datos["id"]);
         $comon->comonHead($opciones);
         $comon->comonMenu($menu_index, $opciones);
         $galleries->galleryMiddle($opciones);

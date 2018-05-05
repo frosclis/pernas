@@ -18,7 +18,7 @@
 
         if($submenus){
             ?>
-        <li class="<?php echo $current; ?> dropdown"><a href="<?php echo $url; ?>" class="dropdown-toggle js-activated" data-toggle="dropdown"><?php echo $name; ?> <span class="caret"></span></a>
+        <li class="<?php echo $current; ?> dropdown"><a data-target="<?php echo $url; ?>" href="<?php echo $url; ?>" class="dropdown-toggle js-activated" data-toggle="dropdown"><?php echo $name; ?> <span class="caret"></span></a>
             <?php
             echo "<ul class='dropdown-menu'>";
             foreach ($submenus as $menu2){
