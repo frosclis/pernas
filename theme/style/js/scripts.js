@@ -101,20 +101,14 @@ $(document).ready(function() {
         filters: '#js-filters-full-width',
         loadMore: '#cbp-onepage-grid-more',
         loadMoreAction: 'click',
-        layoutMode: 'slider',
+        layoutMode: 'mosaic',
         sortToPreventGaps: true,
         defaultFilter: '*',
         animationType: 'quicksand',
         gapHorizontal: 10,
         gapVertical: 10,
         gridAdjustment: 'responsive',
-        mediaQueries: [{
-            width: 768,
-            cols: 3
-        }, {
-            width: 767,
-            cols: 1
-        }],
+        mediaQueries:  [{width: 1440, cols: 5}, {width: 1024, cols: 4}, {width: 768, cols: 3}, {width: 480, cols: 2}, {width: 320, cols: 1}],
         caption: 'fadeIn',
         displayType: 'lazyLoading',
         displayTypeSpeed: 100,
