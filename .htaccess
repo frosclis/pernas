@@ -18,6 +18,7 @@
      RewriteRule ^galerias galeries.php
      RewriteRule ^categoria-galerias/(.*)$ gallery-category.php?url=$1 [L]
      RewriteRule ^galeria/(.*)$ gallery.php?url=$1 [L]
+     RewriteRule ^contacto contact.php
      RewriteRule ^error error404.php
 
 </IfModule>

@@ -95,6 +95,14 @@ LEFT JOIN categories c ON g.categoria = c.id GROUP BY categoria ORDER BY cantida
 		$code = $database->resultset();
 		return $code;
     }
+
+    public function getCategoriasFooterIndex(){
+        $database = new Database();
+
+        $database->query('SELECT nombre, friendly_url FROM categories WHERE estado = 1 ORDER BY id LIMIT 9');
+        $code = $database->resultset();
+        return $code;
+    }
 	
 	public function getCategorieName($id){
 		$database = new Database();

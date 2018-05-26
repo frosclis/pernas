@@ -36,17 +36,19 @@
         
         <div class="col-sm-4">
           <div class="widget">
-            <h4 class="widget-title">Etiquetas</h4>
+            <h4 class="widget-title">Categorías</h4>
             <ul class="tag-list">
-              <li><a href="#" class="btn">Web</a></li>
-              <li><a href="#" class="btn">Photography</a></li>
-              <li><a href="#" class="btn">Illustation</a></li>
-              <li><a href="#" class="btn">Fun</a></li>
-              <li><a href="#" class="btn">Blog</a></li>
-              <li><a href="#" class="btn">Commercial</a></li>
-              <li><a href="#" class="btn">Journal</a></li>
-              <li><a href="#" class="btn">Nature</a></li>
-              <li><a href="#" class="btn">Still Life</a></li>
+                <?php
+                $categoriasFooterIndex = $comon->getCategoriasFooterIndex();
+
+                foreach($categoriasFooterIndex as $categorie) {
+                    $nombre = $categorie['nombre'];
+                    $frienfly_url = $categorie['friendly_url'];
+                    ?>
+                        <li><a href="/categoria-galerias/<?php echo $frienfly_url; ?>" class="btn"><?php echo $nombre; ?></a></li>
+                    <?php
+                }
+                ?>
             </ul>
           </div>
           <!-- /.widget -->
@@ -104,7 +106,7 @@
           <!-- /.widget -->
           <div class="widget">
             <h4 class="widget-title">Contacto</h4>
-            <p>Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa.</p>
+              <p>Puedes contactar conmigo desde nuestro formulario, teléfono, e-mail o visitándome en mi local.</p>
             <div class="contact-info"> <i class="icon-location"></i> <?php echo $datos[0]['direccion']; ?> <br />
               <i class="icon-phone"></i><?php echo $datos[0]['telefono']; ?> <br />
               <i class="icon-mail"></i> <a href="mailto:<?php echo $datos[0]['email']; ?>"><?php echo $datos[0]['email']; ?></a> </div>
@@ -121,7 +123,7 @@
     
     <div class="sub-footer">
       <div class="container inner">
-        <p class="text-center">&copy; 2017 <?php echo $datos[0]['nombre_web']; ?>. Todos los derechos reservados.</p>
+        <p class="text-center">&copy; 2018 <?php echo $datos[0]['nombre_web']; ?>. Todos los derechos reservados.</p>
       </div>
       <!-- .container --> 
     </div>

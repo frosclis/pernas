@@ -72,6 +72,14 @@ class Comon{
 
     }
 
+    public function getCategoriasFooterIndex(){
+        $database = new Database();
+
+        $database->query('SELECT nombre, friendly_url FROM categories WHERE estado = 1 ORDER BY id LIMIT 9');
+        $code = $database->resultset();
+        return $code;
+    }
+
 }
 
 ?>
