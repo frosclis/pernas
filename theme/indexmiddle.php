@@ -22,7 +22,7 @@
 				?>
 						<div class="col-sm-4">
 						  <div class="caption-overlay">
-							<figure><a href="/galerias/categoria/<?php echo $frienfly_url; ?>"><img src="<?php echo $imagen; ?>" alt="<?php echo $nombre; ?>" /> </a></figure>
+							<figure><a href="/categoria-galerias/<?php echo $frienfly_url; ?>"><img src="<?php echo $imagen; ?>" alt="<?php echo $nombre; ?>" /> </a></figure>
 							<div class="caption bottom-right">
 							  <div class="title">
 								<h3 class="main-title layer"><?php echo $nombre; ?></h3>
@@ -80,7 +80,7 @@
 				$categorieFilter = $categorieName[0]['nombre'];
 				
 				?>
-					<div id="item-mosaic-<?php echo $contador; ?>" class="cbp-item <?php echo $categorieFilter; ?>"> <a class="cbp-caption" href="/galerias/<?php echo $url;?>">
+					<div id="item-mosaic-<?php echo $contador; ?>" class="cbp-item <?php echo $categorieFilter; ?>"> <a class="cbp-caption" href="/galeria/<?php echo $url;?>">
 						<div class="cbp-caption-defaultWrap"> <img src="<?php echo $imagenMosaic; ?>" alt="<?php echo $titulo; ?>" /> </div>
 						<div class="cbp-caption-activeWrap">
 						  <div class="cbp-l-caption-alignCenter">
