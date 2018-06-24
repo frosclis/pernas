@@ -1,29 +1,29 @@
 # README #
 
-This README would normally document whatever steps are necessary to get your application up and running.
+La web de Pernas
 
-### What is this repository for? ###
+### ¿Esto para qué es? ###
 
-* Quick summary
-* Version
+* Pues la web de Pernas. Tiene administración, gestor de páginas, blog, contacto y galerías.
+* 0.9.2
 * [Learn Markdown](https://bitbucket.org/tutorials/markdowndemo)
 
-### How do I get set up? ###
+### ¿Cómo lo instalo? ###
 
-* Summary of set up
-* Configuration
-* Dependencies
-* Database configuration
-* How to run tests
-* Deployment instructions
+* Lo clonas, montas la base de datos, cambias los datos en los archivos de configuración que van en la raíz y a correr.
 
-### Contribution guidelines ###
+### No me ayuda ni el tato pero uso: ###
 
-* Writing tests
-* Code review
-* Other guidelines
+* Gentelella admin template
+* Lydia-photography-magazine-site-template
+* Swftmailer
+* TinyMCE
+* Nestable
 
-### Who do I talk to? ###
+### ¿qué queda por hacer? ###
 
-* Repo owner or admin
-* Other community or team contact
+* Modificar la administración del menú para agregar nuevas opciones al menú principal.
+* Cambiar el apartado de 'Sobre mí'.
+* Meter datos de prueba en desarrollo.
+* Hacer despliegue y probar que todo vaya bien.
+* Meter datos finales en desarrollo.
