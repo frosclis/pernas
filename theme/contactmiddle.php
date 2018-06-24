@@ -39,6 +39,29 @@
         }
     }
 </script>
+
+<!-- Modal -->
+<div id="myModal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Términos y Condiciones</h4>
+            </div>
+            <div class="modal-body">
+                <p>Some text in the modal.</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
 <div class="light-wrapper">
     <div class="container inner">
         <div class="row">
@@ -47,7 +70,7 @@
                 <p>Si necesitas más información, quieres consultar disponibiliad de fechas, ver mis trabajos o pedir un presupuesto no dudes en ponerte en contacto conmigo a través de este formulario de contacto, por e-mail o teléfono. Sin ningún compromiso.</p>
                 <div class="divide10"></div>
                 <div class="form-container">
-                    <form action="contact/vanilla-form.php" method="post" class="vanilla vanilla-form" novalidate="novalidate">
+                    <form action="" method="post" class="vanilla vanilla-form" novalidate="novalidate">
                         <div class="row">
                             <div class="col-sm-6">
                                 <div class="form-field">
@@ -78,13 +101,27 @@
                             <!--/column -->
                         </div>
                         <!--/.row -->
-                        <textarea name="message" placeholder="Escribe aquí tu consulta" required="required"></textarea>
-                        <div class="radio-set">
-                            <input class="checkbox-pernas" type="checkbox" value="" name="agree" required="required"> Acepto los <a href="/terminos-y-condiciones">Términos y Condiciones</a>
+                        <textarea name="message" placeholder="Escribe aquí tu consulta" required="required" rows="5"></textarea>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <label>Verifica que no eres un robot *</label>
+                                <div class="g-recaptcha" data-sitekey="6LeqeGAUAAAAAIT5hJ-1X08Ds01ciV1uAy5EH0pd"></div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="radio-set">
+                                    <input class="checkbox-pernas" type="checkbox" value="1" name="agree" required="required"> Acepto los <a href="#modal" data-toggle="modal" data-target="#myModal">Términos y Condiciones</a>
+                                </div>
+                                <!--/.radio-set -->
+                                <input type="submit" class="btn" value="Enviar" data-error="Hay errores" data-processing="Enviando..." data-success="¡Gracias!">
+                            </div>
                         </div>
-                        <!--/.radio-set -->
-                        <input type="submit" class="btn" value="Enviar" data-error="Hay errores" data-processing="Enviando..." data-success="¡Gracias!">
-                        <footer class="notification-box"></footer>
+                        <footer class="notification-box">
+                            <?php
+                                if(isset($datos[0]["respuesta"])) {
+                                    echo $datos[0]["respuesta"];
+                                }
+                            ?>
+                        </footer>
                     </form>
                     <!--/.vanilla-form -->
                 </div>

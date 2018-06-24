@@ -11,18 +11,15 @@
 
 	$opciones = $comon->getOptions();
 
-	if(isset($_POST["busqueda"]) AND !empty($_POST["busqueda"])){
-        $datos = $blog->getPostsSearch($_POST["busqueda"]);
-        $opciones[0]['categoria_titulo'] = "<h1>Resultados de tu búsqueda: ".$_POST["busqueda"]."</h1>";
-	} else {
-        $datos[0] = false;
-    }
+	if(isset($_POST) AND !empty($_POST)){
+        $opciones[0]['respuesta'] = $contact->sendContactMail($_POST);
+	}
 
     $opciones[0]['description'] = "Si quieres hacer una consulta o necesitas más información no dudes en ponerte en conmigo.";
     $opciones[0]['meta_title'] = $opciones[0]['nombre_web'] . " - Contacto";
     $opciones[0]['keywords'] = "Alba Pernas, Fotografía, Fotografía Lugo, Fotografía Galicia, Contacto";
     $menu_index = "Contacto";
-    $opciones = array_merge($opciones, $datos);
+    $opciones = array_merge($opciones);
 
 
 	if($opciones[0]['mantenimiento'] == 0 || (isset($_SESSION['user']['id']) && $_SESSION['user']['id'] !== '')){
