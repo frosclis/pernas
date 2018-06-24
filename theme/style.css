@@ -2951,7 +2951,6 @@ footer input:focus {
 	background: rgba(0,0,0,0.25) !important;
 }
 textarea {
-    height: 100%;
     padding: 8px 13px;
     margin-bottom: 15px;
     min-height: 200px;
@@ -4441,4 +4440,12 @@ section#gallerie-page.light-wrapper div.container.inner div.cbp-panel div.cbp.cb
     position: unset !important;
     opacity: unset !important;
     pointer-events: all !important;
+}
+
+.modal-dialog {
+    margin-top: 90px;
+}
+
+.modal-backdrop.in {
+    opacity: 0;
 }
