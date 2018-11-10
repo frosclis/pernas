@@ -98,7 +98,7 @@
 					
 					this.on("sending", function(file, xhr, formData){
 						formData.append("galleryID", $("#gallery_id").val())
-						this.on('complete', function () {
+						this.on('queuecomplete', function () {
 							location.reload();
 						});
 					});
