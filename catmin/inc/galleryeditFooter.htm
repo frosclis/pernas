@@ -98,9 +98,6 @@
 					
 					this.on("sending", function(file, xhr, formData){
 						formData.append("galleryID", $("#gallery_id").val())
-						this.on('queuecomplete', function () {
-							location.reload();
-						});
 					});
 					
 					this.on('removedfile', function(file){
@@ -109,6 +106,10 @@
 						type: "POST",
 						data: { 'imageID': file.size, 'ruta': file.name}
 						});
+					});
+					
+					this.on('queuecomplete', function () {
+						location.reload();
 					});
 				},
 		});
