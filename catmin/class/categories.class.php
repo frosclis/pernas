@@ -51,7 +51,7 @@ class Category{
     }
 	
 	/**
-	* Obtener el listado de p�ginas
+	* Obtener el listado de páginas
 	* @return void*/
 	
 	public function getCategories($estado){
@@ -97,11 +97,11 @@ class Category{
 			if($database->execute()){
 				return true;
 			} else {
-				$this->msg = 'Ha ocurrido un error durante el borrado de la categor�a. Int�ntalo m�s tarde.';
+				$this->msg = 'Ha ocurrido un error durante el borrado de la categoría. inténtalo más tarde.';
 				return false;
 			}
 		} else {
-			$this->msg = 'Ha ocurrido un error durante el borrado de la categor�a. Int�ntalo m�s tarde.';
+			$this->msg = 'Ha ocurrido un error durante el borrado de la categoría. inténtalo más tarde.';
 			return false;
 		}
 	}
@@ -179,7 +179,7 @@ class Category{
 		if($database->execute()){
 			return true;
 		} else {
-			$this->msg = 'Ha ocurrido un problema con tu actualizaci�n. Int�ntalo m�s tarde.';
+			$this->msg = 'Ha ocurrido un problema con tu actualización. inténtalo más tarde.';
 			return false;
 		}
     }
@@ -211,11 +211,11 @@ class Category{
 				$this->msg = $database->lastInsertId();
 				return true;
 			} else {
-				$this->msg = 'Ha ocurrido un error creando tu nueva p�gina. Int�ntalo m�s tarde.';
+				$this->msg = 'Ha ocurrido un error creando tu nueva página. inténtalo más tarde.';
 				return false;
 			}
 		}
-		$this->msg = 'Ha ocurrido un error creando tu nueva p�gina. Int�ntalo m�s tarde.';
+		$this->msg = 'Ha ocurrido un error creando tu nueva página. inténtalo más tarde.';
 		return false;
 	}
 	
@@ -232,11 +232,11 @@ class Category{
 			if($database->execute()){
 				return true;
 			} else {
-				$this->msg = 'Ha ocurrido un error registrando las im�genes. Int�ntalo m�s tarde.';
+				$this->msg = 'Ha ocurrido un error registrando las imágenes. inténtalo más tarde.';
 				return false;
 			}
 		} else {
-			$this->msg = 'Ha ocurrido un error registrando las im�genes. Int�ntalo m�s tarde.';
+			$this->msg = 'Ha ocurrido un error registrando las imágenes. inténtalo más tarde.';
 			return false;
 		}
 	}

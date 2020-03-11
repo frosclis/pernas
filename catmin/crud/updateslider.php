@@ -6,9 +6,9 @@
 	
 	$slider = new Slider();
 
-    $slider_id = filter_input(INPUT_POST, 'slider_id', FILTER_SANITIZE_EMAIL);
+    $slider_id = filter_input(INPUT_POST, 'slider_id', FILTER_DEFAULT);
 	$titulo = filter_input(INPUT_POST, 'titulo', FILTER_DEFAULT);
-	$subtitulo = filter_input(INPUT_POST, 'subtitulo', FILTER_SANITIZE_EMAIL);
+	$subtitulo = filter_input(INPUT_POST, 'subtitulo', FILTER_DEFAULT);
     $contenido = filter_input(INPUT_POST, 'contenido', FILTER_DEFAULT);
 	$estado = filter_input(INPUT_POST, 'estado', FILTER_DEFAULT);
 	

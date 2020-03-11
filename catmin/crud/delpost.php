@@ -6,7 +6,7 @@
 	
 	$blog = new Blog();
 
-    $pagina_id = filter_input(INPUT_POST, 'post_id', FILTER_SANITIZE_EMAIL);
+    $pagina_id = filter_input(INPUT_POST, 'post_id', FILTER_DEFAULT);
 	
 	
     if( $blog->delPost($pagina_id) ) {

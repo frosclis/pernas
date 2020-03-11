@@ -6,7 +6,7 @@
 	
 	$slider = new Slider();
 
-    $slider_id = filter_input(INPUT_POST, 'slider_id', FILTER_SANITIZE_EMAIL);
+    $slider_id = filter_input(INPUT_POST, 'slider_id', FILTER_DEFAULT);
 	
 	
     if( $slider->delSlider($slider_id) ) {

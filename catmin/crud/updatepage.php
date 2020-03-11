@@ -6,7 +6,7 @@
 	
 	$page = new Page();
 
-    $pagina_id = filter_input(INPUT_POST, 'pagina_id', FILTER_SANITIZE_EMAIL);
+    $pagina_id = filter_input(INPUT_POST, 'pagina_id', FILTER_DEFAULT);
     $friendly_url = filter_input(INPUT_POST, 'friendly_url', FILTER_DEFAULT);
 	$titulo = filter_input(INPUT_POST, 'titulo', FILTER_DEFAULT);
 	$meta_description = filter_input(INPUT_POST, 'meta_description', FILTER_DEFAULT);

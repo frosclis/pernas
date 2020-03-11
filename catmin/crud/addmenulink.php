@@ -4,14 +4,15 @@
 	require_once '../class/databass.class.php';
 	require_once '../../../config.php';
 	
-	$dashboard = new Dashboard();
-	
-	$nombre = filter_input(INPUT_POST, 'nombre', FILTER_SANITIZE_EMAIL);
-    $ruta = filter_input(INPUT_POST, 'ruta', FILTER_DEFAULT);
+    $dashboard = new Dashboard();
+    
+	$name = $_POST['nombre'];
+    $url = $_POST['ruta'];
+    
+    echo $_POST['ruta'];
 
     if( $dashboard->setMenu($name, $url, 0) ) {
-        die;
+        return True;
     } else {
-        $dashboard->printMsg();
-        die;
+        return False;
     }

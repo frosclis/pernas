@@ -6,7 +6,7 @@
 	
 	$page = new Page();
 
-    $pagina_id = filter_input(INPUT_POST, 'pagina_id', FILTER_SANITIZE_EMAIL);
+    $pagina_id = filter_input(INPUT_POST, 'pagina_id', FILTER_DEFAULT);
 	
 	
     if( $page->delPage($pagina_id) ) {

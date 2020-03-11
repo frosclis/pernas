@@ -6,12 +6,12 @@
 	
 	$gallery = new Gallery();
 
-    $gallery_id = filter_input(INPUT_POST, 'gallery_id', FILTER_SANITIZE_EMAIL);
+    $gallery_id = filter_input(INPUT_POST, 'gallery_id', FILTER_DEFAULT);
     $friendly_url = filter_input(INPUT_POST, 'friendly_url', FILTER_DEFAULT);
 	$titulo = filter_input(INPUT_POST, 'titulo', FILTER_DEFAULT);
 	$meta_description = filter_input(INPUT_POST, 'meta_description', FILTER_DEFAULT);
 	$keywords = filter_input(INPUT_POST, 'keywords', FILTER_DEFAULT);
-	$subtitulo = filter_input(INPUT_POST, 'subtitulo', FILTER_SANITIZE_EMAIL);
+	$subtitulo = filter_input(INPUT_POST, 'subtitulo', FILTER_DEFAULT);
     $principal = filter_input(INPUT_POST, 'principal', FILTER_DEFAULT);
 	$estado = filter_input(INPUT_POST, 'estado', FILTER_DEFAULT);
 	$categoria = filter_input(INPUT_POST, 'categoria', FILTER_DEFAULT);

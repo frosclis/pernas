@@ -5,7 +5,7 @@
 	
 	$user = new User();
 
-    $user_id = filter_input(INPUT_POST, 'user_id', FILTER_SANITIZE_EMAIL);
+    $user_id = filter_input(INPUT_POST, 'user_id', FILTER_DEFAULT);
 	
 	
     if( $user->delUser($user_id) ) {

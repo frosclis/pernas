@@ -2,7 +2,7 @@
 	require_once '../class/user.php';
 	require_once '../../../config.php';
 
-    $id = filter_input(INPUT_POST, 'id', FILTER_SANITIZE_EMAIL);
+    $id = filter_input(INPUT_POST, 'id', FILTER_DEFAULT);
 	
     $avatar = $_FILES["file"]["name"];
 	$temporal = $_FILES['file']['tmp_name'];

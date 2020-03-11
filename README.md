@@ -23,9 +23,9 @@ La web de Pernas
 
 ### ¿qué queda por hacer? ###
 
-* Modificar la administración del menú para agregar nuevas opciones al menú principal.
+* Modificar la administración del menú para borrar elementos.
 * Cambiar el apartado de 'Sobre mí'.
 * Modificar Drag and drop de menús.
 * Revisar links en administración.
 * Addon del Instagram.
-* Índice para fotos de galería. Ponerles metas.
+* Ponerles metas a las galerías.

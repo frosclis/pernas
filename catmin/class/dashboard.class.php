@@ -118,9 +118,6 @@ class Dashboard{
 		$database->bind(':father', $father);
 		$database->bind(':position', 100);
 		
-		var_dump($database->query);
-		die;
-		
 		if($database->execute()){
 			return true;
 		} else {

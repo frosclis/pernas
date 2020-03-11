@@ -6,7 +6,7 @@
 	
 	$blogcategory = new BlogCategory();
 
-    $category_id = filter_input(INPUT_POST, 'category_id', FILTER_SANITIZE_EMAIL);
+    $category_id = filter_input(INPUT_POST, 'category_id', FILTER_DEFAULT);
 	
 	
     if( $blogcategory->delBlogCategory($category_id) ) {

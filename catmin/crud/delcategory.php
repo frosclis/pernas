@@ -6,7 +6,7 @@
 	
 	$category = new Category();
 
-    $category_id = filter_input(INPUT_POST, 'category_id', FILTER_SANITIZE_EMAIL);
+    $category_id = filter_input(INPUT_POST, 'category_id', FILTER_DEFAULT);
 	
 	
     if( $category->delCategory($category_id) ) {
