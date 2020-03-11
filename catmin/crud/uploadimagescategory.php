@@ -30,8 +30,4 @@
 				$category->printMsg();
 			}
 		}
-	} else {
-		if($category->getImagesCategory($categoryID)){
-			die;
-		} 
 	}

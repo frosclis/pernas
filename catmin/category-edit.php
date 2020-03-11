@@ -17,6 +17,7 @@
 		$category->categoryeditHead();
 		$dashboard->dashboardTop();
 		$datos = $category->getSingleCategory($category_id);
+		$datos["imagenes"] = $category->getImagesCategory($category_id);
 		$category->categoryEdit($datos);
 		$category->categoryeditFooter();
 	}else{

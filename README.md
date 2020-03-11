@@ -6,11 +6,11 @@ La web de Pernas
 
 * Pues la web de Pernas. Tiene administración, gestor de páginas, blog, contacto y galerías.
 * 0.9.2
-* [Learn Markdown](https://bitbucket.org/tutorials/markdowndemo)
 
 ### ¿Cómo lo instalo? ###
 
 * Lo clonas, montas la base de datos, cambias los datos en los archivos de configuración que van en la raíz y a correr.
+* Activar deflate_module y filter_module en Apache
 
 ### No me ayuda ni el tato pero uso: ###
 
@@ -19,11 +19,13 @@ La web de Pernas
 * Swftmailer
 * TinyMCE
 * Nestable
+* Dropzone
 
 ### ¿qué queda por hacer? ###
 
 * Modificar la administración del menú para agregar nuevas opciones al menú principal.
 * Cambiar el apartado de 'Sobre mí'.
-* Meter datos de prueba en desarrollo.
-* Hacer despliegue y probar que todo vaya bien.
-* Meter datos finales en desarrollo.
+* Modificar Drag and drop de menús.
+* Revisar links en administración.
+* Addon del Instagram.
+* Índice para fotos de galería. Ponerles metas.

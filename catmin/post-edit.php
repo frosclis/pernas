@@ -17,6 +17,7 @@
 		$blog->posteditHead();
 		$dashboard->dashboardTop();
 		$datos = $blog->getSinglePost($page_id);
+		$datos["imagenes"] = $blog->getImages($page_id);
 		$blog->postEdit($datos);
 		$blog->posteditFooter();
 	}else{

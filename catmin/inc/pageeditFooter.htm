@@ -9,6 +9,7 @@
       </div>
     </div>
 
+	<link href="css/nestable.css" type="text/css" rel="stylesheet" />
     <!-- jQuery -->
     <script src="vendors/jquery/dist/jquery.min.js"></script>
     <!-- Bootstrap -->
@@ -30,28 +31,11 @@
     <!-- Custom Theme Scripts -->
     <script src="build/js/custom.min.js"></script>
 	
-	<script type="text/javascript" src="js/dropzone.js"></script>
+	<script type="text/javascript" src="js/dropzone5.js"></script>
+	<script src="js/jquery.nestable.js"></script>
 	
 	
-	<script type="text/javascript">
-	
-		function addPortada(imagen, id){
-			var url = imagen;
-			var filename = url.substring(url.lastIndexOf('/')+1);
-			$("#principal").val(filename);
-			$("#portada-"+id).css("color", "red");
-		}
-		
-		function addImagen(selectimage){
-			var ed = tinyMCE.activeEditor;
-			var marker = ed.dom.get('_math_marker');
-			ed.selection.select(marker, false);
-			var url = selectimage;
-			var filename = url.substring(url.lastIndexOf('/')+1);
-			selectimage = "../uploads/pages/1080/" + filename;
-			ed.selection.setContent("<img src='" + selectimage + "' class='img-responsive'>");
-		}
-		
+	<script type="text/javascript">	
 		
 		$(function() {
 			$("#updatepage").click(function(){
@@ -81,65 +65,65 @@
 				}
 			});
 		});	
-		
 
 		Dropzone.autoDiscover = false;
 		$('.dropzone').dropzone ({
 				url: "<?=uploadimagespagefile?>",
 				init: function() {
 					thisDropzone = this;
-					$.ajax({
-					  method: "POST",
-					  url: "<?=uploadimagespagefile?>",
-					  data: { pageID: $("#pagina_id").val() },
-					  dataType: "json"
-					}).done(function(data) {
-						
-						$.each(data, function(key,value){
-							 
-							var mockFile = { name: "../uploads/pages/"+value.file_name, size: value.id };
-							
-							thisDropzone.emit("addedfile", mockFile);
-							
-							thisDropzone.createThumbnailFromUrl(mockFile, "../uploads/pages/"+value.file_name);
-
-							thisDropzone.emit("complete", mockFile);
-	 	
-						});
-						
-					});
-					
 					this.on("sending", function(file, xhr, formData){
 						formData.append("pageID", $("#pagina_id").val())
-						this.on('complete', function () {
-							location.reload();
-						});
-					});
-					
-					this.on('removedfile', function(file){
-						$.ajax({
-						url: "<?=deleteimagespagefile?>",
-						type: "POST",
-						data: { 'imageID': file.size, 'ruta': file.name}
-						});
 					});
 				},
 		});
 		
-		window.addEventListener('load', function () {
-			portada = $("#principal").val();
-			portada = "../uploads/pages/" + portada;
-			var dates = document.getElementsByClassName("dz-portada");
-			
-			for(var i=0; i<dates.length; i++){
-				var favorito = dates[i].innerHTML;
-				if(favorito == portada){
-					var id = dates[i].id;
-					$("#"+id).css("color", "red");
-					break;
-				}
-			}
+
+		$(".options .remove").click(function(){
+			$.ajax({
+				url: "<?=deleteimagespagefile?>",
+				type: "POST",
+				data: { 'imageID': this.getAttribute("data-id"), 'ruta': this.getAttribute("data-file")}
+			}).done(function(){
+				location.reload();
+			});
 		});
+
+		$(".options .add").click(function(){
+			var url = this.getAttribute("data-file");
+			var filename = url.substring(url.lastIndexOf('/')+1);
+			$("#principal").val(filename);
+		});
+
+		$(".options .add_to_text").click(function(){
+			var ed = tinyMCE.activeEditor;
+			var marker = ed.dom.get('_math_marker');
+			ed.selection.select(marker, false);
+			var url = this.getAttribute("data-file");
+			var filename = url.substring(url.lastIndexOf('/')+1);
+			selectimage = "../uploads/pages/1080/" + filename;
+			ed.selection.setContent("<img src='" + selectimage + "' class='img-responsive'>");
+		});
+
+		$('.dd').nestable({});
+
+		$('.dd').on('change', function(e) {
+			
+			var list = e.length ? e : $(e.target);
+							
+			$.ajax({
+				method: "POST",
+				url: "<?=updatelistimagesfile?>",
+				data: {
+					listado: list.nestable('serialize'),
+					type: 'pagesimages'
+				}
+			}).done(function(data){
+				
+			}).fail(function(jqXHR, textStatus, errorThrown){
+				alert("Unable to save new list order: " + errorThrown);
+			});
+		});
+		
 	</script>
   </body>
 </html>

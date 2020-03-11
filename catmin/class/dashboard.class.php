@@ -169,6 +169,34 @@ class Dashboard{
 		$database->query('SELECT * FROM categories WHERE estado = 1 ORDER BY id');
 		$code = $database->resultset();
 		return $code;
+	}
+	
+	public function updateImagesPosition($id, $type, $position){
+		$database = new Database();
+		error_log("ID:".$id, 0);
+
+		if ($type == 'categoryimages') {
+			$database->query('UPDATE categoryimages SET position = :position WHERE id = :id');
+		} else if ($type == 'categoryblogimages') {
+			$database->query('UPDATE categoryblogimages SET position = :position WHERE id = :id');
+		} else if ($type == 'galleriesimages') {
+			$database->query('UPDATE galleriesimages SET position = :position WHERE id = :id');
+		} else if ($type == 'pagesimages') {
+			$database->query('UPDATE pagesimages SET position = :position WHERE id = :id');
+		} else if ($type == 'postsimages') {
+			$database->query('UPDATE postsimages SET position = :position WHERE id = :id');
+		}		
+		
+		$database->bind(':id', $id);
+		$database->bind(':position', $position);
+		
+		
+		if($database->execute()){
+			return true;
+		} else {
+			$this->msg = 'Ha ocurrido un problema al guardar los datos. Inténtalo más tarde.';
+			return false;
+		}
     }
 	
 }

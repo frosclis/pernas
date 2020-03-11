@@ -243,12 +243,12 @@ class Page{
 		
 		$database = new Database();
 		
-		$database->query("SELECT * FROM pagesimages WHERE page = :page");
+		$database->query("SELECT * FROM pagesimages WHERE page = :page ORDER BY position");
 		$database->bind(':page', $pageID);
 		
 		$resultado = $database->resultset();
 		
-		echo json_encode($resultado);
+		return $resultado;
 	}
 	
 	public function deleteImage($imageID, $ruta){

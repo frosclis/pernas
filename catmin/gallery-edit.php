@@ -17,6 +17,7 @@
 		$gallery->galleryeditHead();
 		$dashboard->dashboardTop();
 		$datos = $gallery->getSingleGallery($gallery_id);
+		$datos["imagenes"] = $gallery->getImagesGallery($gallery_id);
 		$gallery->galleryEdit($datos);
 		$gallery->galleryeditFooter();
 	}else{

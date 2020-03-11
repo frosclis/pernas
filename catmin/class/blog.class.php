@@ -47,7 +47,7 @@ class Blog{
     }
 	
 	/**
-	* Obtener el listado de páginas
+	* Obtener el listado de pï¿½ginas
 	* @return void*/
 	
 	public function getPosts($estado){
@@ -158,7 +158,7 @@ class Blog{
 		if($database->execute()){
 			return true;
 		} else {
-			$this->msg = 'Ha ocurrido un problema con tu actualización. Inténtalo más tarde.';
+			$this->msg = 'Ha ocurrido un problema con tu actualizaciï¿½n. Intï¿½ntalo mï¿½s tarde.';
 			return false;
 		}
     }
@@ -174,11 +174,11 @@ class Blog{
 			if($database->execute()){
 				return true;
 			} else {
-				$this->msg = 'Ha ocurrido un error durante el borrado de la página. Inténtalo más tarde.';
+				$this->msg = 'Ha ocurrido un error durante el borrado de la pï¿½gina. Intï¿½ntalo mï¿½s tarde.';
 				return false;
 			}
 		} else {
-			$this->msg = 'Ha ocurrido un error durante el borrado de la página. Inténtalo más tarde.';
+			$this->msg = 'Ha ocurrido un error durante el borrado de la pï¿½gina. Intï¿½ntalo mï¿½s tarde.';
 			return false;
 		}
 	}
@@ -214,11 +214,11 @@ class Blog{
 				$this->msg = $database->lastInsertId();
 				return true;
 			} else {
-				$this->msg = 'Ha ocurrido un error creando tu nueva página. Inténtalo más tarde.';
+				$this->msg = 'Ha ocurrido un error creando tu nueva pï¿½gina. Intï¿½ntalo mï¿½s tarde.';
 				return false;
 			}
 		}
-		$this->msg = 'Ha ocurrido un error creando tu nueva página. Inténtalo más tarde.';
+		$this->msg = 'Ha ocurrido un error creando tu nueva pï¿½gina. Intï¿½ntalo mï¿½s tarde.';
 		return false;
 	}
 	
@@ -235,11 +235,11 @@ class Blog{
 			if($database->execute()){
 				return true;
 			} else {
-				$this->msg = 'Ha ocurrido un error registrando las imágenes. Inténtalo más tarde.';
+				$this->msg = 'Ha ocurrido un error registrando las imï¿½genes. Intï¿½ntalo mï¿½s tarde.';
 				return false;
 			}
 		} else {
-			$this->msg = 'Ha ocurrido un error registrando las imágenes. Inténtalo más tarde.';
+			$this->msg = 'Ha ocurrido un error registrando las imï¿½genes. Intï¿½ntalo mï¿½s tarde.';
 			return false;
 		}
 	}
@@ -248,12 +248,12 @@ class Blog{
 		
 		$database = new Database();
 		
-		$database->query("SELECT * FROM postsimages WHERE post = :page");
+		$database->query("SELECT * FROM postsimages WHERE post = :page ORDER BY position");
 		$database->bind(':page', $pageID);
 		
 		$resultado = $database->resultset();
 		
-		echo json_encode($resultado);
+		return $resultado;
 	}
 	
 	public function deleteImage($imageID, $ruta){

@@ -17,6 +17,7 @@
 		$blogcategory->blogCategoryeditHead();
 		$dashboard->dashboardTop();
 		$datos = $blogcategory->getSingleBlogCategory($category_id);
+		$datos["imagenes"] = $blogcategory->getImagesBlogCategory($category_id);
 		$blogcategory->blogCategoryEdit($datos);
 		$blogcategory->blogCategoryeditFooter();
 	}else{

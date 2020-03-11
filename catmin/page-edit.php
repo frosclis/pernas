@@ -17,6 +17,7 @@
 		$page->pageeditHead();
 		$dashboard->dashboardTop();
 		$datos = $page->getSinglePage($page_id);
+		$datos["imagenes"] = $page->getImages($page_id);
 		$page->pageEdit($datos);
 		$page->pageeditFooter();
 	}else{

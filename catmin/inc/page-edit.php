@@ -16,6 +16,7 @@
 		$contenido = $datos['contenido'];
 		$ultima_edicion = $datos['ultima_edicion'];
 		$estado = $datos['estado'];
+		$imagenes = $datos['imagenes'];
 		$principal = $datos['principal'];
 		if($estado == 1){
 			$publicado = "checked";
@@ -110,10 +111,50 @@
 					  </div>
 					</div>
 					<div class="col-md-6 col-sm-6 col-xs-12">
-						<form> </form>
-						<div class="image_upload_div">
-							<form id="mydropzone" class="dropzone">
-							</form>
+						<ul class="nav nav-tabs">
+							<li class="active"><a data-toggle="tab" href="#images_div">Imágenes</a></li>
+							<li><a data-toggle="tab" href="#image_upload_div">Subir</a></li>
+						</ul>
+						<div class="tab-content">
+							<div id="images_div" class="tab-pane fade in active image_upload_div dd">
+								<ol class="dd-list">
+									<?php
+										if ($imagenes){
+											foreach($imagenes as $imagen){
+												?>
+													<li class="dd-item" data-id="<?php echo $imagen['id'];?>">
+														<div class="dd-handle" style="height: auto;">
+															<img src="../uploads/pages/thumbnail/<?php echo $imagen['file_name'];?>"/>
+														</div>
+														<div class="options">
+															<span class="add_to_text" style="color:blue; position:absolute; float: right; top: 5%; right: 15%;" data-id="<?php echo $imagen['id'];?>" data-file="<?php echo $imagen['file_name'];?>">
+																<i class="fa fa-plus-circle" aria-hidden="true"></i>
+															</span>
+															<?php
+																if ($principal != $imagen['file_name']){
+																	?>
+																		<span class="add" style="color:green; position:absolute; float: right; top: 5%; right: 10%;" data-id="<?php echo $imagen['id'];?>" data-file="<?php echo $imagen['file_name'];?>">
+																			<i class="fa fa-heart" aria-hidden="true"></i>
+																		</span>
+																	<?php
+																}
+															?>
+															<span class="remove" style="color:red; position:absolute; float: right; top: 5%; right: 5%;" data-id="<?php echo $imagen['id'];?>" data-file="<?php echo $imagen['file_name'];?>">
+																<i class="fa fa-minus-circle" aria-hidden="true"></i>
+															</span>
+														</div>
+													</li>
+												<?php
+											}
+										}
+									?>
+								</ol>
+							</div>
+							<form> </form>
+							<div id="image_upload_div" class="tab-pane fade image_upload_div">
+								<form id="mydropzone" class="dropzone">
+								</form>
+							</div>
 						</div>
 					</div>
 				</div>

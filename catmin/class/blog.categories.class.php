@@ -244,12 +244,12 @@ class BlogCategory{
 		
 		$database = new Database();
 		
-		$database->query("SELECT * FROM categoryblogimages WHERE category = :category");
+		$database->query("SELECT * FROM categoryblogimages WHERE category = :category ORDER BY position");
 		$database->bind(':category', $categoryID);
 		
 		$resultado = $database->resultset();
 		
-		echo json_encode($resultado);
+		return $resultado;
 	}
 	
 	public function deleteImageBlogCategory($categoryID, $ruta){
