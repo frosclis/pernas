@@ -4433,7 +4433,8 @@ textarea {
 }*/
 
 section#gallerie-page.light-wrapper div.container.inner div.cbp-panel div.cbp.cbp-onepage-grid.cbp-caption-active.cbp-caption-fadeIn.cbp-ready div.cbp-wrapper-outer div.cbp-wrapper div.cbp-item {
-    max-height: unset;
+    /*max-height: unset;*/
+    max-height: 190px;
 }
 
 .checkbox-pernas {

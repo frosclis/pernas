@@ -123,7 +123,7 @@
     
     <div class="sub-footer">
       <div class="container inner">
-        <p class="text-center">&copy; 2018 <?php echo $datos[0]['nombre_web']; ?>. Todos los derechos reservados.</p>
+        <p class="text-center">&copy; 2020 <?php echo $datos[0]['nombre_web']; ?>. Todos los derechos reservados.</p>
       </div>
       <!-- .container --> 
     </div>
@@ -139,5 +139,6 @@
 <script src="/theme/style/js/classie.js"></script>
 <script src="/theme/style/js/jquery.themepunch.tools.min.js"></script>
 <script src="/theme/style/js/scripts.js"></script>
+<?php require_once $_SERVER['DOCUMENT_ROOT'].'/utils/scwCookie/output/scwCookie.php'; ?>
 </body>
 </html>

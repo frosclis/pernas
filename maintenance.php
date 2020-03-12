@@ -125,7 +125,7 @@
     
     <div class="sub-footer">
       <div class="container inner">
-        <p class="text-center">© 2017 <a href="https://albapernasfotografia.es">Alba Pernas Fotografía</a>. Todos los derechos reservados.</p>
+        <p class="text-center">© 2020 <a href="https://albapernasfotografia.es">Alba Pernas Fotografía</a>. Todos los derechos reservados.</p>
       </div>
       <!-- .container --> 
     </div>
@@ -141,5 +141,6 @@
 <script src="theme/style/js/classie.js"></script> 
 <script src="theme/style/js/jquery.themepunch.tools.min.js"></script> 
 <script src="theme/style/js/scripts.js"></script>
+<?php require_once $_SERVER['DOCUMENT_ROOT'].'/utils/scwCookie/output/scwCookie.php'; ?>
 </body>
 </html>

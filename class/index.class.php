@@ -82,8 +82,9 @@ class Index{
 	public function getGaleriasIndex(){
 		$database = new Database();
 		
-		$database->query('SELECT COUNT(g.id) as cantidad, c.nombre,c.friendly_url, g.categoria FROM galleries g
-LEFT JOIN categories c ON g.categoria = c.id GROUP BY categoria ORDER BY cantidad LIMIT 3');
+		$database->query('SELECT COUNT(g.id) as cantidad, c.nombre,c.friendly_url, g.categoria FROM galleries g 
+		LEFT JOIN categories c ON g.categoria = c.id WHERE g.categoria IS NOT NULL 
+		AND g.categoria != "" AND g.estado = 1 GROUP BY g.categoria ORDER BY cantidad LIMIT 3');
 		$code = $database->resultset();
 		return $code;
     }
@@ -116,7 +117,7 @@ LEFT JOIN categories c ON g.categoria = c.id GROUP BY categoria ORDER BY cantida
 	public function getCategoryImage($id){
 		$database = new Database();
 		
-		$database->query('SELECT * FROM categoryimages WHERE category = :category ORDER BY id LIMIT 1');
+		$database->query('SELECT * FROM categoryimages WHERE category = :category ORDER BY position LIMIT 1');
 		$database->bind(':category', $id);
 		$code = $database->resultset();
 		return $code;

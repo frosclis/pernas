@@ -108,7 +108,7 @@ class GalleriesFront{
 
         $database = new Database();
 
-        $database->query("SELECT * FROM galleriesimages WHERE gallery = :gallery");
+        $database->query("SELECT * FROM galleriesimages WHERE gallery = :gallery ORDER BY position");
         $database->bind(':gallery', $galleryID);
 
         $resultado = $database->resultset();
@@ -119,7 +119,7 @@ class GalleriesFront{
     public function getCategoryImage($id){
         $database = new Database();
 
-        $database->query('SELECT * FROM categoryimages WHERE category = :category ORDER BY id LIMIT 1');
+        $database->query('SELECT * FROM categoryimages WHERE category = :category ORDER BY position LIMIT 1');
         $database->bind(':category', $id);
         $code = $database->resultset();
         return $code;

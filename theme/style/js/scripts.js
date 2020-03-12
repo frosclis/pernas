@@ -669,10 +669,10 @@ $(window).load(function() {
 /*-----------------------------------------------------------------------------------*/
 /*	FORM
 /*-----------------------------------------------------------------------------------*/
-document.addEventListener("DOMContentLoaded", function() {
+/*document.addEventListener("DOMContentLoaded", function() {
     var myForm;
     myForm = new VanillaForm(document.querySelector("form.vanilla"));
-});
+});*/
 /*-----------------------------------------------------------------------------------*/
 /*	STICKY HEADER
 /*-----------------------------------------------------------------------------------*/

@@ -1,46 +1,46 @@
 <div class="collapse navbar-collapse">
     <ul class="nav navbar-nav">
         <?php
-        $comon = new Comon();
-        $menus = $comon->getMenus(0);
+            $comon = new Comon();
+            $menus = $comon->getMenus(0);
 
-        foreach ($menus as $menu) {
-        $current = "";
-        $id = $menu['id'];
-        $name = $menu['name'];
-        $url = $menu['url'];
+            foreach ($menus as $menu) {
+                $current = "";
+                $id = $menu['id'];
+                $name = $menu['name'];
+                $url = $menu['url'];
 
-        if($vars == $name){
-            $current = "current";
-        }
+                if($vars == $name){
+                    $current = "current";
+                }
 
-        $submenus = $comon->getMenus($id);
+                $submenus = $comon->getMenus($id);
 
-        if($submenus){
-            ?>
-        <li class="<?php echo $current; ?> dropdown"><a data-target="<?php echo $url; ?>" href="<?php echo $url; ?>" class="dropdown-toggle js-activated" data-toggle="dropdown"><?php echo $name; ?> <span class="caret"></span></a>
-            <?php
-            echo "<ul class='dropdown-menu'>";
-            foreach ($submenus as $menu2){
-                $subid = $menu2['id'];
-                $subname = $menu2['name'];
-                $suburl = $menu2['url'];
-                $subposition = $menu2['position'];
-                $subfather = $menu2['father'];
+                if($submenus){
+                    ?>
+                <li class="<?php echo $current; ?> dropdown"><a href="<?php echo $url; ?>" class="dropdown-toggle js-activated" data-toggle="dropdown"><?php echo $name; ?> <span class="caret"></span></a>
+                    <?php
+                    echo "<ul class='dropdown-menu'>";
+                    foreach ($submenus as $menu2){
+                        $subid = $menu2['id'];
+                        $subname = $menu2['name'];
+                        $suburl = $menu2['url'];
+                        $subposition = $menu2['position'];
+                        $subfather = $menu2['father'];
 
+                        ?>
+                        <li><a href="<?php echo $suburl; ?>"><?php echo $subname; ?></a></li>
+                        <?php
+                    }
+                    echo "</ul>";
+                } else {
                 ?>
-                <li><a href="<?php echo $suburl; ?>"><?php echo $subname; ?></a></li>
+                    <li class="<?php echo $current; ?>"><a href="<?php echo $url; ?>"><?php echo $name; ?></a>
                 <?php
+                }
+                echo "</li>";
             }
-            echo "</ul>";
-        } else {
         ?>
-        <li class="<?php echo $current; ?>"><a href="<?php echo $url; ?>"><?php echo $name; ?></a>
-            <?php
-            }
-            echo "</li>";
-            }
-            ?>
     </ul>
     <!-- /.navbar-nav -->
 </div>

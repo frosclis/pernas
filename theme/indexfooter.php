@@ -18,10 +18,10 @@
                     ?>
 
                     <li>
-                        <div class="icon-overlay"> <a href="/blog/<?php echo $friendly_url; ?>"><img src="<?php echo $imagen; ?>" alt="<?php echo $titulo; ?>" /> </a> </div>
+                        <div class="icon-overlay"> <a href="/post/<?php echo $friendly_url; ?>"><img src="<?php echo $imagen; ?>" alt="<?php echo $titulo; ?>" /> </a> </div>
                         <div class="meta">
-                          <h5><a href="/blog/<?php echo $friendly_url; ?>"><?php echo $titulo; ?></a></h5>
-                          <em><span class="date"><?php echo $fecha_publicacion; ?></span> <span class="comentarios"><a href="/blog/<?php echo $friendly_url; ?>"><i class="icon-chat-1"></i> 8</a></span></em> </div>
+                          <h5><a href="/post/<?php echo $friendly_url; ?>"><?php echo $titulo; ?></a></h5>
+                          <em><span class="date"><?php echo $fecha_publicacion; ?></span> <span class="comentarios"><a href="/post/<?php echo $friendly_url; ?>"><i class="icon-chat-1"></i> 8</a></span></em> </div>
                       </li>
 
                     <?php
@@ -123,7 +123,7 @@
     
     <div class="sub-footer">
       <div class="container inner">
-        <p class="text-center">&copy; 2018 <?php echo $datos[0]['nombre_web']; ?>. Todos los derechos reservados.</p>
+        <p class="text-center">&copy; 2020 <?php echo $datos[0]['nombre_web']; ?>. Todos los derechos reservados.</p>
       </div>
       <!-- .container --> 
     </div>
@@ -139,5 +139,6 @@
 <script src="/theme/style/js/classie.js"></script>
 <script src="/theme/style/js/jquery.themepunch.tools.min.js"></script>
 <script src="/theme/style/js/scripts.js"></script>
+<?php require_once $_SERVER['DOCUMENT_ROOT'].'/utils/scwCookie/output/scwCookie.php'; ?>
 </body>
 </html>

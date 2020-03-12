@@ -19,6 +19,25 @@
 	<div class="row">
 		<div class="col-md-6 col-sm-6 col-xs-6">
 			<div class="dd">
+				<h4>Personalizada:</h4>
+				<div class="input-group mb-3">
+					<div class="input-group-prepend">
+						<span class="input-group-text" id="basic-addon1">Título</span>
+					</div>
+					<input type="text" class="form-control" id="customTITLE" placeholder="Título" aria-label="Título" aria-describedby="basic-addon1">
+				</div>
+
+				<div class="input-group mb-3">
+					<div class="input-group-prepend">
+						<span class="input-group-text" id="basic-addon1">URL</span>
+					</div>
+					<input type="text" class="form-control" id="customURL" placeholder="URL" aria-label="URL" aria-describedby="basic-addon1">
+				</div>
+				<div class="options">
+					<span class="custom_add" style="color:green; position:absolute; float: right; top: 5%; right: 5%; cursor: pointer;">
+						<i class="fa fa-plus-circle" aria-hidden="true"></i>
+					</span>
+				</div>
 				<h4>Páginas:</h4>
 				<ol class="dd-list">
 					<?php
@@ -33,7 +52,12 @@
 							}
 							?>
 								<li class="dd-item dd3-item">
-									<div class="dd-handle dd3-handle"></div><div class="dd3-content" onclick="addLink(<?php echo "'".$friendly_url. "'"; ?>, <?php echo "'".$pagina['titulo']. "'"; ?>, 0);"><?php echo $pagina['titulo']; ?></div>
+									<div class="dd-handle dd3-handle"></div><div class="dd3-content"><?php echo $pagina['titulo']; ?></div>
+									<div class="options">
+										<span class="add" style="color:green; position:absolute; float: right; top: 5%; right: 5%;" data-url="<?php echo $friendly_url;?>" data-title="<?php echo $pagina['titulo']; ?>" data-type=0>
+											<i class="fa fa-plus-circle" aria-hidden="true"></i>
+										</span>
+									</div>
 								</li>
 							<?php
 						}
@@ -52,7 +76,12 @@
 							
 							?>
 								<li class="dd-item dd3-item">
-									<div class="dd-handle dd3-handle"></div><div class="dd3-content" onclick="addLink(<?php echo "'".$friendly_url. "'"; ?>, <?php echo "'".$categoria['nombre']. "'"; ?>, 1);"><?php echo $categoria['nombre']; ?></div>
+									<div class="dd-handle dd3-handle"></div><div class="dd3-content"><?php echo $categoria['nombre']; ?></div>
+									<div class="options">
+										<span class="add" style="color:green; position:absolute; float: right; top: 5%; right: 5%;" data-url="<?php echo $friendly_url;?>" data-title="<?php echo $categoria['nombre']; ?>" data-type=1>
+											<i class="fa fa-plus-circle" aria-hidden="true"></i>
+										</span>
+									</div>
 								</li>
 							<?php
 						}
@@ -71,7 +100,12 @@
 							}
 							?>
 								<li class="dd-item dd3-item">
-									<div class="dd-handle dd3-handle"></div><div class="dd3-content" onclick="addLink(<?php echo "'".$friendly_url. "'"; ?>, <?php echo "'".$galeria['titulo']. "'"; ?>, 2);"><?php echo $galeria['titulo']; ?></div>
+									<div class="dd-handle dd3-handle"></div><div class="dd3-content"><?php echo $galeria['titulo']; ?></div>
+									<div class="options">
+										<span class="add" style="color:green; position:absolute; float: right; top: 5%; right: 5%;" data-url="<?php echo $friendly_url;?>" data-title="<?php echo $galeria['titulo']; ?>" data-type=2>
+											<i class="fa fa-plus-circle" aria-hidden="true"></i>
+										</span>
+									</div>
 								</li>
 							<?php
 						}
@@ -96,6 +130,11 @@
 						?>
 						<li class="dd-item dd3-item" data-id="<?php echo $id; ?>">
 							<div class="dd-handle dd3-handle"></div><div class="dd3-content"><?php echo $name; ?></div>
+							<div class="options">
+								<span class="remove" style="color:red; position:absolute; float: right; top: 5%; right: 5%;" data-id="<?php echo $id;?>">
+									<i class="fa fa-minus-circle" aria-hidden="true"></i>
+								</span>
+							</div>
 							<?php
 								$menus = $dashboard->getMenus($id);
 								if($menus){
@@ -110,6 +149,11 @@
 										?>
 											<li class="dd-item dd3-item" data-id="<?php echo $subid; ?>">
 												<div class="dd-handle dd3-handle"></div><div class="dd3-content"><?php echo $subname; ?></div>
+												<div class="options">
+													<span class="remove" style="color:red; position:absolute; float: right; top: 5%; right: 5%;" data-id="<?php echo $subid;?>">
+														<i class="fa fa-minus-circle" aria-hidden="true"></i>
+													</span>
+												</div>
 												<?php
 													$menus2 = $dashboard->getMenus($subid);
 													if($menus2){
@@ -124,6 +168,11 @@
 															?>
 																<li class="dd-item dd3-item" data-id="<?php echo $subid2; ?>">
 																	<div class="dd-handle dd3-handle"></div><div class="dd3-content"><?php echo $subname2; ?></div>
+																	<div class="options">
+																		<span class="remove" style="color:red; position:absolute; float: right; top: 5%; right: 5%;" data-id="<?php echo $subid2;?>">
+																			<i class="fa fa-minus-circle" aria-hidden="true"></i>
+																		</span>
+																	</div>
 																</li>
 															<?php
 														}

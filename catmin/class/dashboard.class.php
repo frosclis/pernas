@@ -142,7 +142,27 @@ class Dashboard{
 			$this->msg = 'Ha ocurrido un problema al guardar los datos. Inténtalo más tarde.';
 			return false;
 		}
-    }
+	}
+	
+	public function delMenu($id){
+		$database = new Database();
+		
+		if(isset($id) && $id !== ""){
+			
+			$database->query('DELETE FROM menu WHERE id = :id OR father = :id');
+			$database->bind(':id', $id);
+			
+			if($database->execute()){
+				return true;
+			} else {
+				$this->msg = 'Ha ocurrido un error durante el borrado del menú. inténtalo más tarde.';
+				return false;
+			}
+		} else {
+			$this->msg = 'Ha ocurrido un error durante el borrado del menú. inténtalo más tarde.';
+			return false;
+		}
+	}
 	
 	public function getPaginas(){
 		$database = new Database();

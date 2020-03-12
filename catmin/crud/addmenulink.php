@@ -7,9 +7,7 @@
     $dashboard = new Dashboard();
     
 	$name = $_POST['nombre'];
-    $url = $_POST['ruta'];
-    
-    echo $_POST['ruta'];
+    $url = $_POST['ruta'];    
 
     if( $dashboard->setMenu($name, $url, 0) ) {
         return True;

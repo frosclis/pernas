@@ -14,7 +14,7 @@
                                 <div class="cbp-caption-activeWrap">
                                     <div class="cbp-l-caption-alignCenter">
                                         <div class="cbp-l-caption-body">
-                                            <div class="cbp-l-caption-title"><span class="cbp-plus"></span></div>
+                                            <div class="cbp-l-caption-title"></div>
                                         </div>
                                     </div>
                                 </div>
