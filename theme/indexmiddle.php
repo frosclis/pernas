@@ -112,39 +112,14 @@
   <div class="light-wrapper">
     <div class="col-image">
       <div class="bg-wrapper col-md-6">
-        <div class="bg-holder" style="background-image: url(/uploads/12909539_10156660282460487_5046713904011428184_o.jpg);"></div>
+        <div class="bg-holder" style="background-image: url(/uploads/aboutme.png);"></div>
       </div>
       <!--/.bg-wrapper -->
       <div class="container">
         <div class="row">
           <div class="col-md-5 col-md-offset-7 inner-col">
-            <h3 class="section-title">a little about me</h3>
-            <p>Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Donec ullamcorper nulla non metus auctor fringilla. Etiam porta sem malesuada magna mollis euismod.</p>
-            <ul class="progress-list">
-              <li>
-                <p>Photoshop <em>90%</em></p>
-                <div class="progress plain">
-                  <div class="bar" data-width="90"></div>
-                </div>
-              </li>
-              <li>
-                <p>Final Cut <em>80%</em></p>
-                <div class="progress plain">
-                  <div class="bar" data-width="80"></div>
-                </div>
-              </li>
-              <li>
-                <p>Studio Photography <em>85%</em></p>
-                <div class="progress plain">
-                  <div class="bar" data-width="85"></div>
-                </div>
-              </li>
-              <li>
-                <p>Motion Video <em>75%</em></p>
-                <div class="progress plain">
-                  <div class="bar" data-width="75"></div>
-                </div>
-              </li>
+            <h3 class="section-title">Un poco sobre mí</h3>
+            <?php echo $datos[0]['about_me_txt']; ?>
             </ul>
             <!-- /.progress-list --> 
           </div>
@@ -209,26 +184,9 @@
   </div>
   <!-- /.dark-wrapper -->
   <div class="light-wrapper">
-    <div class="container inner">
+    <div class="container-fluid">
       <div class="row">
-        <div class="col-sm-4 col-md-3">
-          <h2>Instagram</h2>
-          <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Duis mollis, est non commodo luctus, nisi erat. Nullam quis risus eget urna mollis ornare vel eu leo. Duis mollis, est non commodo.</p>
-          <div class="divide10"></div>
-          <a href="https://instagram.com/urbanshots/" class="btn btn-icon"><i class="icon-s-instagram"></i> Instagram Page</a> </div>
-        <!--/column -->
-        <div class="col-sm-8 col-md-9">
-          <div class="image-grid col5">
-            <div class="items-wrapper">
-              <div id="instafeed" class="isotope items" data-limit="5"></div>
-              
-              <!--/.isotope --> 
-            </div>
-            <!--/.items-wrapper --> 
-          </div>
-          <!--/.image-grid --> 
-        </div>
-        <!--/column --> 
+        <?php echo $datos[0]['lightwidget']; ?>      
       </div>
       <!--/.row --> 
     </div>

@@ -3,5 +3,3 @@
      RewriteEngine on
      ErrorDocument 404 /catmin/error404.php
 </IfModule>
-
-

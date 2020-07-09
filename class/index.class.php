@@ -36,8 +36,8 @@ class Index{
         print $this->renderData(indexMenu, $menu_index, $data);
     }
 	
-	public function indexMiddle() {
-        print $this->render(indexMiddle);
+	public function indexMiddle($data) {
+        print $this->renderData(indexMiddle, "", $data);
     }
 	
 	public function indexHead($data) {

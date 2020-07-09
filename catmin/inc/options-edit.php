@@ -8,8 +8,12 @@
 		$alert = '<div class="alert alert-success"><strong>¡Hecho!</strong> El logo se ha actualizado correctamente.</div>';
 	}
 	
+	if(isset($_GET['updatedaboutme'])){
+		$alert = '<div class="alert alert-success"><strong>¡Hecho!</strong> La imagen "Sobre mí" se ha actualizado correctamente.</div>';
+	}
 
 	$avatar = "../uploads/logo.png";
+	$about_me_img = "../uploads/aboutme.png";
 	
 	$nombre_web = $datos[0]['nombre_web'];
 	$email = $datos[0]['email'];
@@ -24,6 +28,8 @@
 	$flickr = $datos[0]['flickr'];
 	$pinterest = $datos[0]['pinterest'];
 	$linkedin = $datos[0]['linkedin'];
+	$lightwidget = $datos[0]['lightwidget'];
+	$about_me_txt = $datos[0]['about_me_txt'];
 	$mantenimiento = $datos[0]['mantenimiento'];
 	if($mantenimiento == 1){
 		$publicado = "checked";
@@ -154,8 +160,41 @@
                       <div class="col-md-6 col-sm-6 col-xs-12 form-group has-feedback">
                         <input class="form-control" id="linkedin" placeholder="Link a perfil de Linkedin" type="text" value="<?php echo $linkedin; ?>">
                         <span class="fa fa-linkedin form-control-feedback right" aria-hidden="true"></span>
-                      </div>
+					  </div>
                       
+					  <div class="clearfix"></div>
+
+					  <div class="x_title">
+						<h2>LightWidget <small>Código LightWidget de Instagram</small></h2>
+						<div class="clearfix"></div>
+					  </div>
+
+					  <div class="col-md-6 col-sm-6 col-xs-12 form-group has-feedback">
+                        <input class="form-control" id="lightwidget" placeholder="Código Instagram de Lightwidget" type="text" value='<?php echo $lightwidget; ?>'>
+                        <span class="fa fa-instagram form-control-feedback right" aria-hidden="true"></span>
+					  </div>
+
+					  <div class="clearfix"></div>
+
+					  <div class="x_title">
+						<h2>Sobre mí <small>Apartado 'Sobre mí' de la página principal</small></h2>
+						<div class="clearfix"></div>
+					  </div>
+
+					  <div class="col-md-6 col-sm-6 col-xs-12 form-group has-feedback">
+						  <img class="img-responsive avatar-view" src="<?php echo $about_me_img; ?>" alt="Sobre mí" title="Foto Sobre mí">
+						  <h2>Cambia tu imagen <small>Se sobreescribe la anterior</small></h2>
+						  <form action="" method="post" enctype="multipart/form-data">
+								Elige tu imagen:
+								<input type="file" name="about_me_img_new" id="about_me_img_new">
+								<input type="button" class="btn btn-success" id="update-about-me" value="Enviar" name="submit">
+							</form>
+					  </div>
+
+					  <div class="col-md-6 col-sm-6 col-xs-12 form-group has-feedback">
+						<textarea name="contenido" id="about_me_txt" ><?php echo $about_me_txt; ?></textarea>
+					  </div>
+
 					  <div class="clearfix"></div>
 					  
 					  <div class="x_title">
@@ -171,7 +210,7 @@
 					  
                       <div class="ln_solid"></div>
                       <div class="form-group">
-                        <div class="col-md-9 col-sm-9 col-xs-12 col-md-offset-5">
+                        <div class="col-md-9 col-sm-9 col-xs-12 col-md-offset-3">
 						  <a href="/catmin/dashboard.php"><button class="btn btn-primary" type="button">Cancelar</button></a>
 						  <button id="options-update" class="btn btn-success">Guardar</button>
                         </div>

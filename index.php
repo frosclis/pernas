@@ -11,7 +11,7 @@
 	if($opciones[0]['mantenimiento'] == 0 || (isset($_SESSION['user']['id']) && $_SESSION['user']['id'] !== '')){
 	  	$index->indexHead($opciones);
 		$index->indexMenu($menu_index, $opciones);
-		$index->indexMiddle();
+		$index->indexMiddle($opciones);
 		$index->indexFooter($opciones);
 	}else{
 		header('Location: /proximamente');

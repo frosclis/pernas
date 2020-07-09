@@ -6,7 +6,7 @@
 	$dashboard = new Dashboard();
 	
 	if(isset($_SESSION['user']['id']) && $_SESSION['user']['id'] !== ''){
-		$dashboard->dashboardHead();
+		$dashboard->optionsHead();
 		$dashboard->dashboardTop();
 		$options = $dashboard->getOptions();
 		$dashboard->optionsEdit($options);

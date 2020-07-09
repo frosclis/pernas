@@ -20,10 +20,12 @@
 	$direccion = filter_input(INPUT_POST, 'direccion', FILTER_DEFAULT);
 	$latitud = filter_input(INPUT_POST, 'latitud', FILTER_DEFAULT);
 	$longitud = filter_input(INPUT_POST, 'longitud', FILTER_DEFAULT);
+	$about_me_txt = filter_input(INPUT_POST, 'about_me_txt', FILTER_DEFAULT);
+	$lightwidget = filter_input(INPUT_POST, 'lightwidget', FILTER_DEFAULT);
 	$mantenimiento = filter_input(INPUT_POST, 'mantenimiento', FILTER_DEFAULT);
 	
 
-    if($dashboard->setOptions($nombre_web, $description, $email, $facebook, $twitter, $instagram, $flickr, $pinterest, $linkedin, $telefono, $direccion, $latitud, $longitud, $mantenimiento)) {
+    if($dashboard->setOptions($nombre_web, $description, $email, $facebook, $twitter, $instagram, $flickr, $pinterest, $linkedin, $telefono, $direccion, $latitud, $longitud, $about_me_txt, $lightwidget, $mantenimiento)) {
         die;
     } else {
         $dashboard->printMsg();

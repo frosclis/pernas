@@ -22,6 +22,14 @@ class Dashboard{
         ob_start();
         include($path);
         return ob_get_clean();
+	}
+	
+	/**
+    * Print error msg function
+    * @return void.
+    */
+    public function printMsg(){
+        print $this->msg;
     }
 	
 	/**
@@ -43,6 +51,10 @@ class Dashboard{
 	public function dashboardFooter() {
         print $this->render(dashboardFooter);
     }
+	
+	public function optionsHead() {		
+        print $this->render(optionsHead);
+	}
 	
 	public function optionsEdit($data) {
         print $this->renderData(optionsEdit, "", $data);
@@ -68,10 +80,10 @@ class Dashboard{
 		return $code;
     }
 	
-	public function setOptions($nombre_web, $description, $email, $facebook, $twitter, $instagram, $flickr, $pinterest, $linkedin, $telefono, $direccion, $latitud, $longitud, $mantenimiento){
+	public function setOptions($nombre_web, $description, $email, $facebook, $twitter, $instagram, $flickr, $pinterest, $linkedin, $telefono, $direccion, $latitud, $longitud, $about_me_txt, $lightwidget, $mantenimiento){
 		$database = new Database();
 		
-		$database->query('UPDATE parameters SET nombre_web = :nombre_web, description = :description, email = :email, facebook = :facebook, twitter = :twitter, instagram = :instagram, flickr = :flickr, pinterest = :pinterest, linkedin = :linkedin, telefono = :telefono, direccion = :direccion, longitud = :longitud, latitud = :latitud, mantenimiento = :mantenimiento WHERE id = :id');
+		$database->query('UPDATE parameters SET nombre_web = :nombre_web, description = :description, email = :email, facebook = :facebook, twitter = :twitter, instagram = :instagram, flickr = :flickr, pinterest = :pinterest, linkedin = :linkedin, telefono = :telefono, direccion = :direccion, longitud = :longitud, latitud = :latitud, about_me_txt = :about_me_txt, lightwidget = :lightwidget, mantenimiento = :mantenimiento WHERE id = :id');
 		
 		$database->bind(':id', 1);
 		$database->bind(':nombre_web', $nombre_web);
@@ -87,6 +99,8 @@ class Dashboard{
 		$database->bind(':direccion', $direccion);
 		$database->bind(':latitud', $latitud);
 		$database->bind(':longitud', $longitud);
+		$database->bind(':about_me_txt', $about_me_txt);
+		$database->bind(':lightwidget', $lightwidget);
 		$database->bind(':mantenimiento', $mantenimiento);
 		
 		
