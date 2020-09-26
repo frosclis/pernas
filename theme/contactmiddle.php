@@ -1,44 +1,7 @@
 <div class="offset"></div>
-<div id="map"></div>
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA1xdEVYy8IZdBKJGQp_QpDWaNQT7ZHGhY&amp;sensor=false&amp;extension=.js"></script>
-<script> google.maps.event.addDomListener(window, 'load', init);
-    var map;
-    function init() {
-        var mapOptions = {
-            center: new google.maps.LatLng(43.019302, -7.566494),
-            zoom: 17,
-            zoomControl: true,
-            zoomControlOptions: {
-                style: google.maps.ZoomControlStyle.DEFAULT,
-            },
-            disableDoubleClickZoom: false,
-            mapTypeControl: true,
-            mapTypeControlOptions: {
-                style: google.maps.MapTypeControlStyle.DROPDOWN_MENU,
-            },
-            scaleControl: true,
-            scrollwheel: false,
-            streetViewControl: true,
-            draggable : true,
-            overviewMapControl: false,
-            mapTypeId: google.maps.MapTypeId.ROADMAP,
-            styles: [{stylers:[{saturation:-100},{gamma:1}]},{elementType:"labels.text.stroke",stylers:[{visibility:"off"}]},{featureType:"poi.business",elementType:"labels.text",stylers:[{visibility:"off"}]},{featureType:"poi.business",elementType:"labels.icon",stylers:[{visibility:"off"}]},{featureType:"poi.place_of_worship",elementType:"labels.text",stylers:[{visibility:"off"}]},{featureType:"poi.place_of_worship",elementType:"labels.icon",stylers:[{visibility:"off"}]},{featureType:"road",elementType:"geometry",stylers:[{visibility:"simplified"}]},{featureType:"water",stylers:[{visibility:"on"},{saturation:50},{gamma:0},{hue:"#50a5d1"}]},{featureType:"administrative.neighborhood",elementType:"labels.text.fill",stylers:[{color:"#333333"}]},{featureType:"road.local",elementType:"labels.text",stylers:[{weight:0.5},{color:"#333333"}]},{featureType:"transit.station",elementType:"labels.icon",stylers:[{gamma:1},{saturation:50}]}]
-        }
-
-        var mapElement = document.getElementById('map');
-        var map = new google.maps.Map(mapElement, mapOptions);
-        var locations = [
-            ['Alba Pernas Fotografía', 43.019302, -7.566494]
-        ];
-        for (i = 0; i < locations.length; i++) {
-            marker = new google.maps.Marker({
-                icon: '/theme/style/images/favicon.png',
-                position: new google.maps.LatLng(locations[i][1], locations[i][2]),
-                map: map
-            });
-        }
-    }
-</script>
+<div style="width: 100%">
+    <iframe scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?width=100%25&amp;height=400&amp;hl=es&amp;q=Cami%C3%B1o%20Real%20155%2027004%20Lugo+(Alba%20Pernas%20Fotograf%C3%ADa)&amp;t=&amp;z=18&amp;ie=UTF8&amp;iwloc=B&amp;output=embed" width="100%" height="400" frameborder="0"></iframe>
+</div>
 
 <!-- Modal -->
 <div id="myModal" class="modal fade" role="dialog">

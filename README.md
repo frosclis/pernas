@@ -5,7 +5,7 @@ La web de Pernas
 ### ¿Esto para qué es? ###
 
 * Pues la web de Pernas. Tiene administración, gestor de páginas, blog, contacto y galerías.
-* 0.9.5
+* 0.9.6
 
 ### ¿Cómo lo instalo? ###
 
@@ -23,11 +23,7 @@ La web de Pernas
 * Dropzone
 * gdpr-cookie-2.3
 
-### ¿qué queda por hacer? ###
+### ¿Qué queda por hacer? ###
 
-* Cambiar el apartado de 'Sobre mí' de la página principal.
-* Addon del Instagram // cambiar por LightWidget.
-* Ponerles metas a las galerías.
-* Página 404
-* Comprobar mailer
+* Google Analytics
 * Instalar Disqus

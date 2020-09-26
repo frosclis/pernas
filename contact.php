@@ -12,7 +12,7 @@
 	$opciones = $comon->getOptions();
 
 	if(isset($_POST) AND !empty($_POST)){
-        $opciones[0]['respuesta'] = $contact->sendContactMail($_POST);
+        $opciones[0]['respuesta'] = $contact->sendContactMail($_POST, $opciones);
 	}
 
     $opciones[0]['description'] = "Si quieres hacer una consulta o necesitas más información no dudes en ponerte en conmigo.";

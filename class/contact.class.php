@@ -44,12 +44,12 @@ class Contact{
         print $this->renderData(contactMenu, $menu_index, $data);
     }
 
-    public function sendContactMail($formulario) {
+    public function sendContactMail($formulario, $opciones) {
         if(!empty($formulario)){
             if(empty($formulario['name']) OR empty($formulario['email']) OR empty($formulario['message']))
                 return $resultado ='<div class="alert alert-danger"><strong>Error!</strong> El correo no ha sido enviado, por favor revisa todos los campos.</div>';
             else{
-                $secret = '6LeqeGAUAAAAAMTdxMuagmD3ERIBtVxadjf5u1Oc';
+                $secret = $opciones[0]['captcha_secret'];
                 //get verify response data
                 $verifyResponse = file_get_contents('https://www.google.com/recaptcha/api/siteverify?secret='.$secret.'&response='.$formulario['g-recaptcha-response']);
                 $responseData = json_decode($verifyResponse);
@@ -69,12 +69,12 @@ class Contact{
                         try {
 
                             //$transport = Swift_SmtpTransport::newInstance('gator3265.hostgator.com', 25);
-                            $transport = Swift_SmtpTransport::newInstance('smtp.gmail.com', 465, 'ssl')->setUsername('alertasapf@gmail.com')->setPassword('movidas222');
+                            $transport = Swift_SmtpTransport::newInstance($opciones[0]['server_url'], $opciones[0]['server_port'], 'ssl')->setUsername($opciones[0]['alert_mail'])->setPassword($opciones[0]['alert_mail_pass']);
 
                             $mailer = Swift_Mailer::newInstance($transport);
 
-                            $message = Swift_Message::newInstance('Contacto')->setFrom(array('alertasapf@gmail.com' => 'Alertas Alba Pernas Fotografía'));
-                            $message->setTo('admin1@example.com');
+                            $message = Swift_Message::newInstance('Contacto')->setFrom(array($opciones[0]['alert_mail'] => 'Alertas Alba Pernas Fotografía'));
+                            $message->setTo($opciones[0]['email']);
                             $message->setBody($mensaje_CONTENIDO, 'text/html', 'utf-8');
                             $message->setSubject($mensaje_ASUNTO);
                             $message->setReplyTo($formulario['email']);
@@ -88,7 +88,7 @@ class Contact{
 
                         //send email
                         if (!$mailer->send($message))
-                        return $resultado ='<div class="alert alert-danger"><strong>Error!</strong> No hemos recibido tu email, por favor ponte en contacto con nosotros por teléfono o inténtalo más tarde.</div>';
+                        return $resultado ='<div class="alert alert-danger"><strong>Error!</strong> No hemos podido enviar tu solicitud, por favor ponte en contacto con nosotros por teléfono o inténtalo más tarde.</div>';
                         else{
                             unset($formulario);
                             return $resultado ='<div class="alert alert-success"><strong>Correcto!</strong> Tu mensaje ha sido enviado correctamente, nos pondremos en contacto contigo lo antes posible.</div>';

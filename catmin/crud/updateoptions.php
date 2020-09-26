@@ -23,9 +23,14 @@
 	$about_me_txt = filter_input(INPUT_POST, 'about_me_txt', FILTER_DEFAULT);
 	$lightwidget = filter_input(INPUT_POST, 'lightwidget', FILTER_DEFAULT);
 	$mantenimiento = filter_input(INPUT_POST, 'mantenimiento', FILTER_DEFAULT);
+	$captcha_secret = filter_input(INPUT_POST, 'captcha_secret', FILTER_DEFAULT);
+	$server_url = filter_input(INPUT_POST, 'server_url', FILTER_DEFAULT);
+	$server_port = filter_input(INPUT_POST, 'server_port', FILTER_DEFAULT);
+	$alert_mail = filter_input(INPUT_POST, 'alert_mail', FILTER_DEFAULT);
+	$alert_mail_pass = filter_input(INPUT_POST, 'alert_mail_pass', FILTER_DEFAULT);
 	
 
-    if($dashboard->setOptions($nombre_web, $description, $email, $facebook, $twitter, $instagram, $flickr, $pinterest, $linkedin, $telefono, $direccion, $latitud, $longitud, $about_me_txt, $lightwidget, $mantenimiento)) {
+    if($dashboard->setOptions($nombre_web, $description, $email, $facebook, $twitter, $instagram, $flickr, $pinterest, $linkedin, $telefono, $direccion, $latitud, $longitud, $about_me_txt, $lightwidget, $mantenimiento, $captcha_secret, $server_url, $server_port, $alert_mail, $alert_mail_pass)) {
         die;
     } else {
         $dashboard->printMsg();

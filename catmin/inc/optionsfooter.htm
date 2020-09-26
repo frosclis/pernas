@@ -34,7 +34,7 @@
 					$.ajax({
 						  method: "POST",
 						  url: "<?=updateoptionsfile?>",
-						  data: { nombre_web: $("#nombre_web").val(), description: $("#description").val(), email: $("#email").val(), facebook: $("#facebook").val(), twitter: $("#twitter").val(), instagram: $("#instagram").val(), flickr: $("#flickr").val(), pinterest: $("#pinterest").val(), linkedin: $("#linkedin").val(), telefono: $("#telefono").val(), direccion: $("#direccion").val(), longitud: $("#longitud").val(), latitud: $("#latitud").val(), about_me_txt: $("#about_me_txt").val(), lightwidget: $("#lightwidget").val(), mantenimiento: publicado }
+						  data: { nombre_web: $("#nombre_web").val(), description: $("#description").val(), email: $("#email").val(), facebook: $("#facebook").val(), twitter: $("#twitter").val(), instagram: $("#instagram").val(), flickr: $("#flickr").val(), pinterest: $("#pinterest").val(), linkedin: $("#linkedin").val(), telefono: $("#telefono").val(), direccion: $("#direccion").val(), longitud: $("#longitud").val(), latitud: $("#latitud").val(), about_me_txt: $("#about_me_txt").val(), lightwidget: $("#lightwidget").val(), mantenimiento: publicado, captcha_secret: $("#captcha_secret").val(), server_url: $("#server_url").val(), server_port: $("#server_port").val(), alert_mail: $("#alert_mail").val(), alert_mail_pass: $("#alert_mail_pass").val() }
 						}).done(function( msg ) {
 							if(msg !== ""){
 								alert(msg);

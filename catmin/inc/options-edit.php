@@ -31,6 +31,11 @@
 	$lightwidget = $datos[0]['lightwidget'];
 	$about_me_txt = $datos[0]['about_me_txt'];
 	$mantenimiento = $datos[0]['mantenimiento'];
+	$captcha_secret = $datos[0]['captcha_secret'];
+	$server_url = $datos[0]['server_url'];
+	$server_port = $datos[0]['server_port'];
+	$alert_mail = $datos[0]['alert_mail'];
+	$alert_mail_pass = $datos[0]['alert_mail_pass'];
 	if($mantenimiento == 1){
 		$publicado = "checked";
 	} else {
@@ -172,6 +177,33 @@
 					  <div class="col-md-6 col-sm-6 col-xs-12 form-group has-feedback">
                         <input class="form-control" id="lightwidget" placeholder="Código Instagram de Lightwidget" type="text" value='<?php echo $lightwidget; ?>'>
                         <span class="fa fa-instagram form-control-feedback right" aria-hidden="true"></span>
+					  </div>
+
+					  <div class="clearfix"></div>
+
+					  <div class="x_title">
+						<h2>Contacto <small>Avisos formulario</small></h2>
+						<div class="clearfix"></div>
+					  </div>
+
+					  <div class="col-md-6 col-sm-6 col-xs-12 form-group has-feedback">
+                        <input class="form-control" id="captcha_secret" placeholder="Código secreto recaptcha" type="text" value='<?php echo $captcha_secret; ?>'>
+					  </div>
+
+					  <div class="col-md-6 col-sm-6 col-xs-12 form-group has-feedback">
+                        <input class="form-control" id="server_url" placeholder="Servidor de correo" type="text" value='<?php echo $server_url; ?>'>
+					  </div>
+
+					  <div class="col-md-6 col-sm-6 col-xs-12 form-group has-feedback">
+                        <input class="form-control" id="server_port" placeholder="Puerto servidor de correo" type="text" value='<?php echo $server_port; ?>'>
+					  </div>
+
+					  <div class="col-md-6 col-sm-6 col-xs-12 form-group has-feedback">
+                        <input class="form-control" id="alert_mail" placeholder="E-mail alertas" type="text" value='<?php echo $alert_mail; ?>'>
+					  </div>
+
+					  <div class="col-md-6 col-sm-6 col-xs-12 form-group has-feedback">
+                        <input class="form-control" id="alert_mail_pass" placeholder="Contraseña e-mail alertas" type="text" value='<?php echo $alert_mail_pass; ?>'>
 					  </div>
 
 					  <div class="clearfix"></div>

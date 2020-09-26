@@ -80,10 +80,10 @@ class Dashboard{
 		return $code;
     }
 	
-	public function setOptions($nombre_web, $description, $email, $facebook, $twitter, $instagram, $flickr, $pinterest, $linkedin, $telefono, $direccion, $latitud, $longitud, $about_me_txt, $lightwidget, $mantenimiento){
+	public function setOptions($nombre_web, $description, $email, $facebook, $twitter, $instagram, $flickr, $pinterest, $linkedin, $telefono, $direccion, $latitud, $longitud, $about_me_txt, $lightwidget, $mantenimiento, $captcha_secret, $server_url, $server_port, $alert_mail, $alert_mail_pass){
 		$database = new Database();
 		
-		$database->query('UPDATE parameters SET nombre_web = :nombre_web, description = :description, email = :email, facebook = :facebook, twitter = :twitter, instagram = :instagram, flickr = :flickr, pinterest = :pinterest, linkedin = :linkedin, telefono = :telefono, direccion = :direccion, longitud = :longitud, latitud = :latitud, about_me_txt = :about_me_txt, lightwidget = :lightwidget, mantenimiento = :mantenimiento WHERE id = :id');
+		$database->query('UPDATE parameters SET nombre_web = :nombre_web, description = :description, email = :email, facebook = :facebook, twitter = :twitter, instagram = :instagram, flickr = :flickr, pinterest = :pinterest, linkedin = :linkedin, telefono = :telefono, direccion = :direccion, longitud = :longitud, latitud = :latitud, about_me_txt = :about_me_txt, lightwidget = :lightwidget, mantenimiento = :mantenimiento, captcha_secret = :captcha_secret, server_url = :server_url, server_port = :server_port, alert_mail= :alert_mail, alert_mail_pass = :alert_mail_pass WHERE id = :id');
 		
 		$database->bind(':id', 1);
 		$database->bind(':nombre_web', $nombre_web);
@@ -102,7 +102,11 @@ class Dashboard{
 		$database->bind(':about_me_txt', $about_me_txt);
 		$database->bind(':lightwidget', $lightwidget);
 		$database->bind(':mantenimiento', $mantenimiento);
-		
+		$database->bind(':captcha_secret', $captcha_secret);
+		$database->bind(':server_url', $server_url);
+		$database->bind(':server_port', $server_port);
+		$database->bind(':alert_mail', $alert_mail);
+		$database->bind(':alert_mail_pass', $alert_mail_pass);
 		
 		if($database->execute()){
 			return true;
