@@ -5,7 +5,7 @@ La web de Pernas
 ### ¿Esto para qué es? ###
 
 * Pues la web de Pernas. Tiene administración, gestor de páginas, blog, contacto y galerías.
-* 0.9.6
+* 1.0.0
 
 ### ¿Cómo lo instalo? ###
 
@@ -25,5 +25,4 @@ La web de Pernas
 
 ### ¿Qué queda por hacer? ###
 
-* Google Analytics
-* Instalar Disqus
+* Lo que considere Pernas que no esté bien.

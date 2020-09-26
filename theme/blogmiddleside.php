@@ -26,7 +26,7 @@
                         <div class="icon-overlay"> <a href="/post/<?php echo $friendly_url; ?>"><img src="<?php echo $imagen; ?>" alt="<?php echo $titulo; ?>" /> </a> </div>
                         <div class="meta">
                             <h5><a href="/post/<?php echo $friendly_url; ?>"><?php echo $titulo; ?></a></h5>
-                            <em><span class="date"><?php echo $fecha_publicacion; ?></span> <span class="comentarios"><a href="/post/<?php echo $friendly_url; ?>"><i class="icon-chat-1"></i> 8</a></span></em> </div>
+                            <em><span class="date"><?php echo $fecha_publicacion; ?></span></em> </div>
                     </li>
 
                     <?php
@@ -97,20 +97,6 @@
                 }
                 ?>
             </ul>
-        </div>
-        <!-- /.widget -->
-
-        <div class="sidebox widget">
-            <h3 class="widget-title">Instagram</h3>
-            <div class="image-grid col3">
-                <div class="items-wrapper">
-                    <div id="instafeed-widget" class="isotope items"></div>
-
-                    <!--/.isotope -->
-                </div>
-                <!--/.items-wrapper -->
-            </div>
-            <!--/.image-grid -->
         </div>
         <!-- /.widget -->
 

@@ -157,7 +157,7 @@ class Index{
 	public function getCategorieBlogName($id){
 		$database = new Database();
 		
-		$database->query('SELECT nombre, color FROM categoriesblog WHERE id = :id');
+		$database->query('SELECT nombre, color, friendly_url FROM categoriesblog WHERE id = :id');
 		$database->bind(':id', $id);
 		$code = $database->resultset();
 		return $code;

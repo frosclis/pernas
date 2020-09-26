@@ -21,7 +21,7 @@
                         <div class="icon-overlay"> <a href="/post/<?php echo $friendly_url; ?>"><img src="<?php echo $imagen; ?>" alt="<?php echo $titulo; ?>" /> </a> </div>
                         <div class="meta">
                           <h5><a href="/post/<?php echo $friendly_url; ?>"><?php echo $titulo; ?></a></h5>
-                          <em><span class="date"><?php echo $fecha_publicacion; ?></span> <span class="comentarios"><a href="/post/<?php echo $friendly_url; ?>"><i class="icon-chat-1"></i> 8</a></span></em> </div>
+                          <em><span class="date"><?php echo $fecha_publicacion; ?></span></em> </div>
                       </li>
 
                     <?php
@@ -139,6 +139,7 @@
 <script src="/theme/style/js/classie.js"></script>
 <script src="/theme/style/js/jquery.themepunch.tools.min.js"></script>
 <script src="/theme/style/js/scripts.js"></script>
+<script id="dsq-count-scr" src="//albapernasfotografia.disqus.com/count.js" async></script>
 <?php require_once $_SERVER['DOCUMENT_ROOT'].'/utils/scwCookie/output/scwCookie.php'; ?>
 </body>
 </html>

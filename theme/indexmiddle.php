@@ -149,6 +149,7 @@
 					$cat_id = $post['categoria'];
 					$catdata = $index->getCategorieBlogName($cat_id);
 					$categoria = $catdata[0]['nombre'];
+					$cat_url = $catdata[0]['friendly_url'];
                     $color = $catdata[0]['color'];
 					$titulo = $post['titulo'];
 					$friendly_url = $post['friendly_url'];
@@ -159,9 +160,9 @@
 						<div class="item post">
 							<figure class="main"><img src="<?php echo $imagen; ?>" alt="<?php echo $titulo; ?>" /></figure>
 							<div class="box text-center">
-							  <div class="category <?php echo $color; ?>"><span><a href="/categoria-blog/<?php echo $categoria; ?>"><?php echo $categoria; ?></a></span></div>
+							  <div class="category <?php echo $color; ?>"><span><a href="/categoria-blog/<?php echo $cat_url; ?>"><?php echo $categoria; ?></a></span></div>
 							  <h4 class="post-title"><a href="/post/<?php echo $friendly_url; ?>"><?php echo $titulo; ?></a></h4>
-							  <div class="meta"><span class="date"><?php echo $fecha_publicacion; ?></span><span class="comentarios"><a href="/post/<?php echo $friendly_url; ?>"><i class="icon-chat-1"></i> 15</a></span></div>
+							  <div class="meta"><span class="date"><?php echo $fecha_publicacion; ?></span></div>
 							  <p><?php echo $contenido; ?>...</p>
 							</div>
 							<!-- /.box --> 

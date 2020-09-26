@@ -41,7 +41,7 @@
                                             <div class="box text-center">
                                                 <div class="category <?php  echo $categoriaDatos["color"]; ?>"><span><a href="/categoria-blog/<?php echo $categoriaDatos["friendly_url"]; ?>"><?php  echo $categoriaDatos["nombre"]; ?></a></span></div>
                                                 <h4 class="post-title"><a href="/post/<?php echo $friendly_url; ?>"><?php echo $titulo; ?></a></h4>
-                                                <div class="meta"><span class="date"><?php echo $fecha_publicacion; ?></span><span class="comments"><a href="#"><i class="icon-chat-1"></i> 15</a></span></div>
+                                                <div class="meta"><span class="date"><?php echo $fecha_publicacion; ?></span></div>
                                                 <?php echo $contenido; ?>
                                             </div>
                                             <!-- /.box -->
