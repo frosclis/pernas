@@ -1,6 +1,6 @@
 <div class="offset"></div>
 <div style="width: 100%">
-    <iframe scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?width=100%25&amp;height=400&amp;hl=es&amp;q=Cami%C3%B1o%20Real%20155%2027004%20Lugo+(Alba%20Pernas%20Fotograf%C3%ADa)&amp;t=&amp;z=18&amp;ie=UTF8&amp;iwloc=B&amp;output=embed" width="100%" height="400" frameborder="0"></iframe>
+    <iframe scrolling="no" marginheight="0" marginwidth="0" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d11668.207703226648!2d-7.566504!3d43.0192942!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x9e133c71cec477a8!2sAlba%20Pernas%20Fotograf%C3%ADa!5e0!3m2!1sgl!2ses!4v1601121958544!5m2!1sgl!2ses" width="100%" height="400" frameborder="0"></iframe>
 </div>
 
 <!-- Modal -->
